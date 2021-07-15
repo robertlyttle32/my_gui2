@@ -134,7 +134,7 @@ def file1():
 	entry1.insert(END, FILE2)
 	print()
 
-#Create buttons
+#create buttons
 def button_0():
 	global button0
 	button0 = "button0"

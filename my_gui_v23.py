@@ -17,38 +17,9 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 import datetime
 import threading
 
-OPTIONS = 0
-METADATA = 5
-PVR_FILE = ' '
-DATE = 0
-DATE2 = 0
-TIME = 0
-TIME1 = 0
-PVR_DATA = 0
-PVR_FILE = ' '
-PVR_DATA1 = 0
-BANNER = ' '
-FRAME_NUMBER = 0
-TIME_DELTA = 0
-EXT = '.mp4'
-line = 2
-pvr_time = 0
-video_time = 0
-pvr_date = 0
-pvr_banner = ' '
-ban = ' '
-pvr_count = 0
-start_line = 0
-new_frame = 0
-first_frame = 0
-frame_num1 = 0
-frame_num = 0
-start_banner =  ' '
-offset = 0
-trim = 1.05
-test_value = 'test'
-line_num = 0
-line_filler = '_'*40
+BANNER = 0
+cv2 = 0
+banner_speed = 0
 RED = 255  # 0 - 255
 BLUE = 255 # 0 - 255
 GREEN = 255 # 0 - 255

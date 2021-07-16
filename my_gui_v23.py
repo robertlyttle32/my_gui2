@@ -17,9 +17,10 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 import datetime
 import threading
 
-BANNER = 0
 cv2 = 0
+var = 0
 banner_speed = 0
+BANNER = 0
 RED = 255  # 0 - 255
 BLUE = 255 # 0 - 255
 GREEN = 255 # 0 - 255
@@ -134,7 +135,7 @@ def file1():
 	entry1.insert(END, FILE2)
 	print()
 
-#create buttons
+#Create buttons
 def button_0():
 	global button0
 	button0 = "button0"
@@ -223,17 +224,21 @@ def exit():
 	
 
 #settings tab
-def communication():
+def communication_wizard(object):
         Tabs = Tk()
         Tabs.geometry("400x400")
-        Tabs.title("Connection")
+        Tabs.title("Connection Wizard")
         tabControl = ttk.Notebook(Tabs)
 
         tab_1 = ttk.Frame(tabControl)
         tab_2 = ttk.Frame(tabControl)
+        tab_3 = ttk.Frame(tabControl)
+        tab_4 = ttk.Frame(tabControl)
 
         tabControl.add(tab_1, text ='TCP')
         tabControl.add(tab_2, text ='Serial')
+        tabControl.add(tab_3, text ='Bluetooth')
+        tabControl.add(tab_4, text ='Wifi')
         tabControl.pack(expand = 1, fill ="both")
 
         tabControl = ttk.Notebook(tab_1)
@@ -253,21 +258,77 @@ def communication():
         l4 = Label(tab_2, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
         l5 = Label(tab_2, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
         l6 = Label(tab_2, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+
+        tabControl = ttk.Notebook(tab_3)
+        l1 = Label(tab_3, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
+        l1 = Label(tab_3, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
+        l2 = Label(tab_3, text="Speed (baud): ").grid(row=4, column=0, sticky="wn", padx=5)
+        l3 = Label(tab_3, text="Data bits: ").grid(row=5, column=0, sticky="wn", padx=5)
+        l4 = Label(tab_3, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
+        l5 = Label(tab_3, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
+        l6 = Label(tab_3, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+
+        tabControl = ttk.Notebook(tab_4)
+        l1 = Label(tab_4, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
+        l1 = Label(tab_4, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
+        l2 = Label(tab_4, text="Speed (baud): ").grid(row=4, column=0, sticky="wn", padx=5)
+        l3 = Label(tab_4, text="Data bits: ").grid(row=5, column=0, sticky="wn", padx=5)
+        l4 = Label(tab_4, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
+        l5 = Label(tab_4, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
+        l6 = Label(tab_4, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
         
         #creat entry boxes
-        s1 = Entry(tab_1, width=20)
-        s2 = Entry(tab_1, width=20)
-        s3 = Entry(tab_1, width=20)
-        s4 = Entry(tab_1, width=20)
-        s5 = Entry(tab_1, width=20)
-        s6 = Entry(tab_1, width=20)
+        e_1_0 = Entry(tab_1, width=20)
+        e_1_1 = Entry(tab_1, width=20)
+        e_1_2 = Entry(tab_1, width=20)
+        e_1_3 = Entry(tab_1, width=20)
+        e_1_4 = Entry(tab_1, width=20)
+        e_1_5 = Entry(tab_1, width=20)
 
-        s7 = Entry(tab_2, width=20)
-        s8 = Entry(tab_2, width=20)
-        s9 = Entry(tab_2, width=20)
-        s10 = Entry(tab_2, width=20)
-        s11 = Entry(tab_2, width=20)
-        s12 = Entry(tab_2, width=20)
+        def get_tab(TAB_NUM):
+                global e0
+                global e1
+                global e2
+                global e3
+                global e4
+                global e5
+                e0 = "e_{}_1".format(TAB_NUM)
+                #e0 ="e_{}_0".format(TAB_NUM)
+                e1 = "e_{}_1".format(TAB_NUM)
+                e2 ="e_{}_0".format(TAB_NUM)
+                e3 = "e_{}_1".format(TAB_NUM)
+                e4 = "e_{}_1".format(TAB_NUM)
+                e5 = "e_{}_1".format(TAB_NUM)
+                #e1_0 = e_1_0.get()
+                #e1_1 = e_1_1.get()
+                #e1_2 = e_1_2.get()
+                #e1_3 = e_1_3.get()
+                #e1_4 = e_1_4.get()
+                #e1_5 = e_1_5.get()
+                print("Tab_NUMBER: ", TAB_NUM)
+                print("E0: ", e0)
+
+        e_2_0 = Entry(tab_2, width=20)
+        e_2_1 = Entry(tab_2, width=20)
+        e_2_2 = Entry(tab_2, width=20)
+        e_2_3 = Entry(tab_2, width=20)
+        e_2_4 = Entry(tab_2, width=20)
+        e_2_5 = Entry(tab_2, width=20)
+
+        def get_tab2():
+                global e2_0
+                global e2_1
+                global e2_2
+                global e2_3
+                global e2_4
+                global e2_5
+                e2_0 = e_2_0.get()
+                e2_1 = e_2_1.get()
+                e2_2 = e_2_2.get()
+                e2_3 = e_2_3.get()
+                e2_4 = e_2_4.get()
+                e2_5 = e_2_5.get()
+
 
         #create buttons
         Button(tab_1, text="+").grid(row=9, column=1, sticky="wne")
@@ -285,7 +346,8 @@ def communication():
         def submit():
                 message1 = "Submitted"
                 print("Message1: ", message1)
-                message = s1.get()
+                message = e_1_0.get()
+                get_tab(button_select)
                 print("Message: ", message)
                 Tabs.destroy()
 
@@ -297,27 +359,29 @@ def communication():
         Button(tab_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #show entry boxes on screen
-        s1.grid(row=3, column=1, sticky="wne")
-        s2.grid(row=4, column=1, sticky="wne")
-        s3.grid(row=5, column=1, sticky="wne")
-        s4.grid(row=6, column=1, sticky="wne")
-        s5.grid(row=7, column=1, sticky="wne")
-        s6.grid(row=8, column=1, sticky="wne")
+        e_1_0.grid(row=3, column=1, sticky="wne")
+        e_1_2.grid(row=4, column=1, sticky="wne")
+        e_1_3.grid(row=5, column=1, sticky="wne")
+        e_1_4.grid(row=6, column=1, sticky="wne")
+        e_1_5.grid(row=7, column=1, sticky="wne")
+        e_2_0.grid(row=8, column=1, sticky="wne")
 
-        s7.grid(row=3, column=1, sticky="wne")
-        s8.grid(row=4, column=1, sticky="wne")
-        s9.grid(row=5, column=1, sticky="wne")
-        s10.grid(row=6, column=1, sticky="wne")
-        s11.grid(row=7, column=1, sticky="wne")
-        s12.grid(row=8, column=1, sticky="wne")
+        e_2_0.grid(row=3, column=1, sticky="wne")
+        e_2_1.grid(row=4, column=1, sticky="wne")
+        e_2_2.grid(row=5, column=1, sticky="wne")
+        e_2_3.grid(row=6, column=1, sticky="wne")
+        e_2_4.grid(row=7, column=1, sticky="wne")
+        e_2_5.grid(row=8, column=1, sticky="wne")
         Tabs.mainloop()
 
 
-def settings_menu():
-	global button1
-	button1 = not button1
-	print('Pause again: ', button1)
-	communication()
+def settings_menu(object):
+        global button1
+        global button_select
+        button_select = object
+        button1 = not button1
+        print('Pause again: ', button1)
+        communication_wizard(object)
                 
 
 
@@ -406,21 +470,21 @@ btn_stop = Button(window, text="Stop", command=stop).grid(row=22, column=0, stic
 
 
 #settings button
-btn_set_1 = Button(window, text="+", command=settings_menu).grid(row=3, column=3, sticky="ew", padx=5)
-btn_set_2 = Button(window, text="+", command=settings_menu).grid(row=4, column=3, sticky="ew", padx=5)
-btn_set_3 = Button(window, text="+", command=settings_menu).grid(row=5, column=3, sticky="ew", padx=5)
-btn_set_4 = Button(window, text="+", command=settings_menu).grid(row=6, column=3, sticky="ew", padx=5)
-btn_set_5 = Button(window, text="+", command=settings_menu).grid(row=7, column=3, sticky="ew", padx=5)
-btn_6 = Button(window, text="+", command=settings_menu).grid(row=8, column=3, sticky="ew", padx=5)
-btn_set_7 = Button(window, text="+", command=settings_menu).grid(row=9, column=3, sticky="ew", padx=5)
-btn_set_8= Button(window, text="+", command=settings_menu).grid(row=10, column=3, sticky="ew", padx=5)
-btn_set_9 = Button(window, text="+", command=settings_menu).grid(row=11, column=3, sticky="ew", padx=5)
-btn_set_10 = Button(window, text="+", command=settings_menu).grid(row=12, column=3, sticky="ew", padx=5)
-btn_set_11 = Button(window, text="+", command=settings_menu).grid(row=13, column=3, sticky="ew", padx=5)
-btn_set_12 = Button(window, text="+", command=settings_menu).grid(row=14, column=3, sticky="ew", padx=5)
-btn_set_13 = Button(window, text="+", command=settings_menu).grid(row=15, column=3, sticky="ew", padx=5)
-btn_set_14 = Button(window, text="+", command=settings_menu).grid(row=16, column=3, sticky="ew", padx=5)
-btn_set_15 = Button(window, text="+", command=settings_menu).grid(row=17, column=3, sticky="ew", padx=5)
+btn_set_1 = Button(window, text="+", command=lambda:settings_menu(0)).grid(row=3, column=3, sticky="ew", padx=5)
+btn_set_2 = Button(window, text="+", command=lambda:settings_menu(1)).grid(row=4, column=3, sticky="ew", padx=5)
+btn_set_3 = Button(window, text="+", command=lambda:settings_menu(2)).grid(row=5, column=3, sticky="ew", padx=5)
+btn_set_4 = Button(window, text="+", command=lambda:settings_menu(3)).grid(row=6, column=3, sticky="ew", padx=5)
+btn_set_5 = Button(window, text="+", command=lambda:settings_menu(4)).grid(row=7, column=3, sticky="ew", padx=5)
+btn_6 = Button(window, text="+",command=lambda:settings_menu(5) ).grid(row=8, column=3, sticky="ew", padx=5)
+btn_set_7 = Button(window, text="+", command=lambda:settings_menu(6)).grid(row=9, column=3, sticky="ew", padx=5)
+btn_set_8= Button(window, text="+", command=lambda:settings_menu(7)).grid(row=10, column=3, sticky="ew", padx=5)
+btn_set_9 = Button(window, text="+", command=lambda:settings_menu(8)).grid(row=11, column=3, sticky="ew", padx=5)
+btn_set_10 = Button(window, text="+", command=lambda:settings_menu(9)).grid(row=12, column=3, sticky="ew", padx=5)
+btn_set_11 = Button(window, text="+", command=lambda:settings_menu(10)).grid(row=13, column=3, sticky="ew", padx=5)
+btn_set_12 = Button(window, text="+", command=lambda:settings_menu(11)).grid(row=14, column=3, sticky="ew", padx=5)
+btn_set_13 = Button(window, text="+", command=lambda:settings_menu(12)).grid(row=15, column=3, sticky="ew", padx=5)
+btn_set_14 = Button(window, text="+", command=lambda:settings_menu(13)).grid(row=16, column=3, sticky="ew", padx=5)
+btn_set_15 = Button(window, text="+", command=lambda:settings_menu(14)).grid(row=17, column=3, sticky="ew", padx=5)
 btn_set_date = Button(window, text = "Select Date", command = set_date).grid(row=18, column=0, sticky="ew", padx=5) #.pack(pady = 20)
 btn_file0 = Button(window, text="Import file", command=file0).grid(row=19, column=0, sticky="ew", padx=5)
 btn_add_camera = Button(window, text="Add Camera", command=add_camera).grid(row=20, column=0, sticky="ew", padx=5)

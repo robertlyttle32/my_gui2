@@ -36,9 +36,9 @@ count = 0
 
 #get files
 class Debugger1:
-        def __init__(self, x,VIDEO_DATE, FILE):
+        def __init__(self, x,DATE, FILE):
                 self.x = x
-                self.VIDEO_DATE = VIDEO_DATE
+                self. DATE = DATE
                 self.FILE = FILE
 
         def command_0():
@@ -327,21 +327,42 @@ def communication_wizard(object):
 
 
         def get_entry(TAB_NUM):
-                global e0
-                global e1
-                global e2
-                global e3
-                global e4
-                global e5
+                global e100
+                global e101
+                global e102
+                global e103
+                global e104
+                global e105
+
+                global e200
+                global e201
+                global e202
+                global e203
+                global e204
+                global e205
+
+                global e300
+                global e301
+                global e302
+                global e303
+                global e304
+                global e305
+
+                global e400
+                global e401
+                global e402
+                global e403
+                global e404
+                global e405
                 entry_box = 0
 
                 #TCP settings
-                e0 = e_1_0.get()
-                e1 = e_1_1.get()
-                e2 = e_1_2.get()
-                e3 = e_1_3.get()
-                e4 = e_1_4.get()
-                e5 = e_1_5.get()
+                e100 = e_1_0.get()
+                e101 = e_1_1.get()
+                e102 = e_1_2.get()
+                e103 = e_1_3.get()
+                e104 = e_1_4.get()
+                e105 = e_1_5.get()
 
                 entry.delete(0, END)
                 entry.insert(END, e_1_0.get())
@@ -357,29 +378,29 @@ def communication_wizard(object):
                 entry5.insert(END, e_1_5.get())
                 
                 #Serial/CAN Settings
-                e0 = e_2_0.get()
-                e1 = e_2_1.get()
-                e2 = e_2_2.get()
-                e3 = e_2_3.get()
-                e4 = e_2_4.get()
-                e5 = e_2_5.get()
+                e200 = e_2_0.get()
+                e201 = e_2_1.get()
+                e202 = e_2_2.get()
+                e203 = e_2_3.get()
+                e204 = e_2_4.get()
+                e205 = e_2_5.get()
 
 
                 #Bluetooth Settings
-                e0 = e_3_0.get()
-                e1 = e_3_1.get()
-                e2 = e_3_2.get()
-                e3 = e_3_3.get()
-                e4 = e_3_4.get()
-                e5 = e_3_5.get()
+                e300 = e_3_0.get()
+                e301 = e_3_1.get()
+                e302 = e_3_2.get()
+                e303 = e_3_3.get()
+                e304 = e_3_4.get()
+                e305 = e_3_5.get()
 
                 #Wifi Settings
-                e0 = e_4_0.get()
-                e1 = e_4_1.get()
-                e2 = e_4_2.get()
-                e3 = e_4_3.get()
-                e4 = e_4_4.get()
-                e5 = e_4_5.get()
+                e400 = e_4_0.get()
+                e401 = e_4_1.get()
+                e402 = e_4_2.get()
+                e403 = e_4_3.get()
+                e404 = e_4_4.get()
+                e405 = e_4_5.get()
 
                 #Example insert data from menu tab2 into main window entry box
                 entry7.delete(0, END)
@@ -395,7 +416,6 @@ def communication_wizard(object):
                 entry13.delete(0, END)
                 entry14.insert(END, e_2_0.get())
 
-
                 print("Tab_NUMBER: ", TAB_NUM)
                 print("Entry box number: ", entry_box)
                 print("E0: ", e0)
@@ -404,8 +424,6 @@ def communication_wizard(object):
                 print("E3: ", e3)
                 print("E4: ", e4)
                 print("E5: ", e5)
-
-
 
         #create channel labels
         e_label1 = Label(tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
@@ -456,7 +474,6 @@ def communication_wizard(object):
         e_2_5.grid(row=8, column=1, sticky="wne")
         Tabs.mainloop()
 
-
 def settings_menu(object):
         global button1
         global button_select
@@ -465,8 +482,6 @@ def settings_menu(object):
         print('Pause again: ', button1)
         communication_wizard(object)
                 
-
-
 def set_date():
 	# Create Calendar Object
 	root = Tk()
@@ -482,11 +497,11 @@ def set_date():
 		date.config(text = 'Selected date is: ' + cal.get_date())
 		video_date = cal.get_date()
 		month, day, year = video_date.split('/')
-		global VIDEO_DATE
-		VIDEO_DATE  = '0{}/0{}/{}'.format(day, month, year)
+		global DATE
+		DATE  = '0{}/0{}/{}'.format(day, month, year)
 		entry.delete(0, END)
-		entry.insert(END, VIDEO_DATE)
-		print('Date: ', VIDEO_DATE)
+		entry.insert(END, DATE)
+		print('Date: ', DATE)
 		root.destroy()
 
 	# Add Button and Label

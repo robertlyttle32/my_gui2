@@ -108,8 +108,6 @@ class Debugger1:
         def command_11():
                 pass
 
-
-
 #get files
 def file0():
 	"""Open a file for editing."""
@@ -258,7 +256,7 @@ def communication_wizard(object):
         tabControl.add(tab_2, text ='Serial')
         tabControl.add(tab_3, text ='Bluetooth')
         tabControl.add(tab_4, text ='Wifi')
-        tabControl.pack(expand = 1, fill ="both")
+        tabControl.pack(expand = 8, fill ="both")
 
         tabControl = ttk.Notebook(tab_1)
         l1 = Label(tab_1, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
@@ -354,7 +352,6 @@ def communication_wizard(object):
                 global e403
                 global e404
                 global e405
-                entry_box = 0
 
                 #TCP settings
                 e100 = e_1_0.get()
@@ -417,13 +414,12 @@ def communication_wizard(object):
                 entry14.insert(END, e_2_0.get())
 
                 print("Tab_NUMBER: ", TAB_NUM)
-                print("Entry box number: ", entry_box)
-                print("E0: ", e0)
-                print("E1: ", e1)
-                print("E2: ", e2)
-                print("E3: ", e3)
-                print("E4: ", e4)
-                print("E5: ", e5)
+                print("E0: ", e100)
+                print("E1: ", e101)
+                print("E2: ", e102)
+                print("E3: ", e103)
+                print("E4: ", e104)
+                print("E5: ", e105)
 
         #create channel labels
         e_label1 = Label(tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)

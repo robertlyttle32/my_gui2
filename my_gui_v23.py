@@ -292,20 +292,19 @@ def communication_wizard(object):
                 global e3
                 global e4
                 global e5
-                e0 = "e_{}_1".format(TAB_NUM)
-                #e0 ="e_{}_0".format(TAB_NUM)
-                e1 = "e_{}_1".format(TAB_NUM)
-                e2 ="e_{}_0".format(TAB_NUM)
-                e3 = "e_{}_1".format(TAB_NUM)
-                e4 = "e_{}_1".format(TAB_NUM)
-                e5 = "e_{}_1".format(TAB_NUM)
-                #e1_0 = e_1_0.get()
-                #e1_1 = e_1_1.get()
-                #e1_2 = e_1_2.get()
-                #e1_3 = e_1_3.get()
-                #e1_4 = e_1_4.get()
-                #e1_5 = e_1_5.get()
+                entry_box = 0
+                if TAB_NUM < 6:
+                        entry_box = 1
+                elif TAB_NUM > 5:
+                        entry_box = 2
+                e0 = "e_{}_{}".format(entry_box, TAB_NUM)
+                e1 = "e_{}_{}".format(entry_box, TAB_NUM)
+                e2 = "e_{}_{}".format(entry_box, TAB_NUM)
+                e3 = "e_{}_{}".format(entry_box, TAB_NUM)
+                e4 = "e_{}_{}".format(entry_box, TAB_NUM)
+                e5 = "e_{}_{}".format(entry_box, TAB_NUM)
                 print("Tab_NUMBER: ", TAB_NUM)
+                print("Entry box number: ", entry_box)
                 print("E0: ", e0)
 
         e_2_0 = Entry(tab_2, width=20)
@@ -314,20 +313,6 @@ def communication_wizard(object):
         e_2_3 = Entry(tab_2, width=20)
         e_2_4 = Entry(tab_2, width=20)
         e_2_5 = Entry(tab_2, width=20)
-
-        def get_tab2():
-                global e2_0
-                global e2_1
-                global e2_2
-                global e2_3
-                global e2_4
-                global e2_5
-                e2_0 = e_2_0.get()
-                e2_1 = e_2_1.get()
-                e2_2 = e_2_2.get()
-                e2_3 = e_2_3.get()
-                e2_4 = e_2_4.get()
-                e2_5 = e_2_5.get()
 
 
         #create buttons

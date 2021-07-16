@@ -285,27 +285,6 @@ def communication_wizard(object):
         e_1_4 = Entry(tab_1, width=20)
         e_1_5 = Entry(tab_1, width=20)
 
-        def get_tab(TAB_NUM):
-                global e0
-                global e1
-                global e2
-                global e3
-                global e4
-                global e5
-                entry_box = 0
-                if TAB_NUM < 6:
-                        entry_box = 1
-                elif TAB_NUM > 5:
-                        entry_box = 2
-                e0 = "e_{}_{}".format(entry_box, TAB_NUM)
-                e1 = "e_{}_{}".format(entry_box, TAB_NUM)
-                e2 = "e_{}_{}".format(entry_box, TAB_NUM)
-                e3 = "e_{}_{}".format(entry_box, TAB_NUM)
-                e4 = "e_{}_{}".format(entry_box, TAB_NUM)
-                e5 = "e_{}_{}".format(entry_box, TAB_NUM)
-                print("Tab_NUMBER: ", TAB_NUM)
-                print("Entry box number: ", entry_box)
-                print("E0: ", e0)
 
         e_2_0 = Entry(tab_2, width=20)
         e_2_1 = Entry(tab_2, width=20)
@@ -313,6 +292,72 @@ def communication_wizard(object):
         e_2_3 = Entry(tab_2, width=20)
         e_2_4 = Entry(tab_2, width=20)
         e_2_5 = Entry(tab_2, width=20)
+
+
+        def get_entry(TAB_NUM):
+                global e0
+                global e1
+                global e2
+                global e3
+                global e4
+                global e5
+                entry_box = 0
+                if TAB_NUM < 7:
+                        entry_box = 1
+                        e0 = e_1_0.get()
+                        e1 = e_1_1.get()
+                        e2 = e_1_2.get()
+                        e3 = e_1_4.get()
+                        e4 = e_1_5.get()
+                        e5 = e_1_5.get()
+
+
+                        entry.delete(0, END)
+                        entry.insert(END, e0)
+                        entry1.delete(0, END)
+                        entry1.insert(END, e1)
+                        entry2.delete(0, END)
+                        entry2.insert(END, e2)
+                        entry3.delete(0, END)
+                        entry3.insert(END, e3)
+                        entry4.delete(0, END)
+                        entry4.insert(END, e4)
+                        entry5.delete(0, END)
+                        entry5.insert(END, e5)
+                
+
+                elif TAB_NUM > 7:
+                        entry_box = 2
+                        e0 = e_2_0.get()
+                        e1 = e_2_1.get()
+                        e2 = e_2_2.get()
+                        e3 = e_2_4.get()
+                        e4 = e_2_5.get()
+                        e5 = e_2_5.get()
+
+                        entry7.delete(0, END)
+                        entry7.insert(END, e0)
+                        entry8.delete(0, END)
+                        entry8.insert(END, e1)
+                        entry9.delete(0, END)
+                        entry9.insert(END, e2)
+                        entry10.delete(0, END)
+                        entry10.insert(END, e3)
+                        entry11.delete(0, END)
+                        entry12.insert(END, e4)
+                        entry13.delete(0, END)
+                        entry14.insert(END, e5)
+
+                
+                print("Tab_NUMBER: ", TAB_NUM)
+                print("Entry box number: ", entry_box)
+                print("E0: ", e0)
+                print("E1: ", e1)
+                print("E2: ", e2)
+                print("E3: ", e3)
+                print("E4: ", e4)
+                print("E5: ", e5)
+
 
 
         #create buttons
@@ -331,9 +376,7 @@ def communication_wizard(object):
         def submit():
                 message1 = "Submitted"
                 print("Message1: ", message1)
-                message = e_1_0.get()
-                get_tab(button_select)
-                print("Message: ", message)
+                get_entry(button_select)
                 Tabs.destroy()
 
 
@@ -345,11 +388,11 @@ def communication_wizard(object):
 
         #show entry boxes on screen
         e_1_0.grid(row=3, column=1, sticky="wne")
-        e_1_2.grid(row=4, column=1, sticky="wne")
-        e_1_3.grid(row=5, column=1, sticky="wne")
-        e_1_4.grid(row=6, column=1, sticky="wne")
-        e_1_5.grid(row=7, column=1, sticky="wne")
-        e_2_0.grid(row=8, column=1, sticky="wne")
+        e_1_1.grid(row=4, column=1, sticky="wne")
+        e_1_2.grid(row=5, column=1, sticky="wne")
+        e_1_3.grid(row=6, column=1, sticky="wne")
+        e_1_4.grid(row=7, column=1, sticky="wne")
+        e_2_5.grid(row=8, column=1, sticky="wne")
 
         e_2_0.grid(row=3, column=1, sticky="wne")
         e_2_1.grid(row=4, column=1, sticky="wne")

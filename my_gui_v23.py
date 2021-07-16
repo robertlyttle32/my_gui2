@@ -334,51 +334,66 @@ def communication_wizard(object):
                 global e4
                 global e5
                 entry_box = 0
-                if TAB_NUM <= 7:
-                        entry_box = 1
-                        e0 = e_1_0.get()
-                        e1 = e_1_1.get()
-                        e2 = e_1_2.get()
-                        e3 = e_1_3.get()
-                        e4 = e_1_4.get()
-                        e5 = e_1_5.get()
 
+                #TCP settings
+                e0 = e_1_0.get()
+                e1 = e_1_1.get()
+                e2 = e_1_2.get()
+                e3 = e_1_3.get()
+                e4 = e_1_4.get()
+                e5 = e_1_5.get()
 
-                        entry.delete(0, END)
-                        entry.insert(END, e0)
-                        entry1.delete(0, END)
-                        entry1.insert(END, e1)
-                        entry2.delete(0, END)
-                        entry2.insert(END, e2)
-                        entry3.delete(0, END)
-                        entry3.insert(END, e3)
-                        entry4.delete(0, END)
-                        entry4.insert(END, e4)
-                        entry5.delete(0, END)
-                        entry5.insert(END, e5)
+                entry.delete(0, END)
+                entry.insert(END, e_1_0.get())
+                entry1.delete(0, END)
+                entry1.insert(END, e_1_1.get())
+                entry2.delete(0, END)
+                entry2.insert(END, e_1_2.get())
+                entry3.delete(0, END)
+                entry3.insert(END, e_1_3.get())
+                entry4.delete(0, END)
+                entry4.insert(END, e_1_4.get())
+                entry5.delete(0, END)
+                entry5.insert(END, e_1_5.get())
                 
+                #Serial/CAN Settings
+                e0 = e_2_0.get()
+                e1 = e_2_1.get()
+                e2 = e_2_2.get()
+                e3 = e_2_3.get()
+                e4 = e_2_4.get()
+                e5 = e_2_5.get()
 
-                elif TAB_NUM >= 8:
-                        entry_box = 2
-                        e0 = e_2_0.get()
-                        e1 = e_2_1.get()
-                        e2 = e_2_2.get()
-                        e3 = e_2_3.get()
-                        e4 = e_2_4.get()
-                        e5 = e_2_5.get()
 
-                        entry7.delete(0, END)
-                        entry7.insert(END, e0)
-                        entry8.delete(0, END)
-                        entry8.insert(END, e1)
-                        entry9.delete(0, END)
-                        entry9.insert(END, e2)
-                        entry10.delete(0, END)
-                        entry10.insert(END, e3)
-                        entry11.delete(0, END)
-                        entry12.insert(END, e4)
-                        entry13.delete(0, END)
-                        entry14.insert(END, e5)
+                #Bluetooth Settings
+                e0 = e_3_0.get()
+                e1 = e_3_1.get()
+                e2 = e_3_2.get()
+                e3 = e_3_3.get()
+                e4 = e_3_4.get()
+                e5 = e_3_5.get()
+
+                #Wifi Settings
+                e0 = e_4_0.get()
+                e1 = e_4_1.get()
+                e2 = e_4_2.get()
+                e3 = e_4_3.get()
+                e4 = e_4_4.get()
+                e5 = e_4_5.get()
+
+                #Example insert data from menu tab2 into main window entry box
+                entry7.delete(0, END)
+                entry7.insert(END, e_2_0.get())
+                entry8.delete(0, END)
+                entry8.insert(END, e_2_1.get())
+                entry9.delete(0, END)
+                entry9.insert(END, e_2_2.get())
+                entry10.delete(0, END)
+                entry10.insert(END, e_2_3.get())
+                entry11.delete(0, END)
+                entry12.insert(END, e_2_4.get())
+                entry13.delete(0, END)
+                entry14.insert(END, e_2_0.get())
 
 
                 print("Tab_NUMBER: ", TAB_NUM)

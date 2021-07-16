@@ -302,13 +302,13 @@ def communication_wizard(object):
                 global e4
                 global e5
                 entry_box = 0
-                if TAB_NUM < 7:
+                if TAB_NUM <= 7:
                         entry_box = 1
                         e0 = e_1_0.get()
                         e1 = e_1_1.get()
                         e2 = e_1_2.get()
-                        e3 = e_1_4.get()
-                        e4 = e_1_5.get()
+                        e3 = e_1_3.get()
+                        e4 = e_1_4.get()
                         e5 = e_1_5.get()
 
 
@@ -326,13 +326,13 @@ def communication_wizard(object):
                         entry5.insert(END, e5)
                 
 
-                elif TAB_NUM > 7:
+                elif TAB_NUM >= 8:
                         entry_box = 2
                         e0 = e_2_0.get()
                         e1 = e_2_1.get()
                         e2 = e_2_2.get()
-                        e3 = e_2_4.get()
-                        e4 = e_2_5.get()
+                        e3 = e_2_3.get()
+                        e4 = e_2_4.get()
                         e5 = e_2_5.get()
 
                         entry7.delete(0, END)

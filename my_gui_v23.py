@@ -554,7 +554,7 @@ def troubleshoot_wizard():
 
         #control 1 menu label
         tabControl = ttk.Notebook(control_1)
-        cl1 = Label(control_1, text="Control Setting: 1 ").grid(row=2, column=0, sticky="wn", padx=5)
+        cl1 = Label(control_1, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
         cl1 = Label(control_1, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
         cl2 = Label(control_1, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
         cl3 = Label(control_1, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
@@ -727,11 +727,14 @@ def troubleshoot_wizard():
                 print("E5: ", c105)
 
         #control tab 1, 2, 3, and 4 main window channel label
-        channel_select = 0
-        c_label1 = Label(control_1, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        c_label2 = Label(control_2, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        c_label3 = Label(control_3, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        c_label4 = Label(control_4, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        channel1_select = "1"
+        channel2_select = "2"
+        channel3_select = "3"
+        channel4_select = "4"
+        c_label1 = Label(control_1, text="Channel: {}".format(channel1_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        c_label2 = Label(control_2, text="Channel: {}".format(channel2_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        c_label3 = Label(control_3, text="Channel: {}".format(channel3_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        c_label4 = Label(control_4, text="Channel: {}".format(channel4_select)).grid(row=0, column=0, sticky="wn", padx=5)
 
         #control tab 1 buttons
         btn_1_c1 = Button(control_1, text="+").grid(row=9, column=1, sticky="wne")
@@ -860,7 +863,7 @@ l113 = Label(window, text="13: ").grid(row=16, column=1, sticky="wn", padx=5)
 l114 = Label(window, text="14: ").grid(row=17, column=1, sticky="wn", padx=5)
 
 #tab 2 main window label
-l200 = Label(window_1, text="00: ").grid(row=3, column=0, sticky="wn", padx=5)
+l200 = Label(window_1, text="Diagnostics: ").grid(row=3, column=0, sticky="wn", padx=5)
 
 #tab 1 show main window entry box
 entry100.grid(row=3, column=2, sticky="wne", padx=5)

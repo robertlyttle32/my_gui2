@@ -7,6 +7,7 @@ import os
 import sys
 import datetime
 import time
+import socket
 import glob
 from tkinter import *
 from tkinter import ttk
@@ -14,7 +15,6 @@ from tkinter import filedialog
 from tkinter import messagebox
 from tkcalendar import Calendar
 from tkinter.filedialog import askopenfilename, asksaveasfilename
-import datetime
 import threading
 
 cv2 = 0
@@ -79,22 +79,22 @@ class Debugger1:
                 pass
 
         def command_7():
-                entry.delete(0, END)
-                entry.insert(END, BANNER[0])
-                entry5.delete(0, END)
-                entry5.insert(END, BANNER[3])
-                entry6.delete(0, END)
-                entry6.insert(END, banner_speed)
-                entry7.delete(0, END)
-                entry7.insert(END, BANNER[5])
-                entry8.delete(0, END)
-                entry8.insert(END, BANNER[10])
-                entry9.delete(0, END)
-                entry9.insert(END, BANNER[11])
-                entry10.delete(0, END)
-                entry10.insert(END, BANNER[6])
-                entry11.delete(0, END)
-                entry11.insert(END, BANNER[12])
+                entry100.delete(0, END)
+                entry100.insert(END, BANNER[0])
+                entry101.delete(0, END)
+                entry101.insert(END, BANNER[3])
+                entry102.delete(0, END)
+                entry102.insert(END, banner_speed)
+                entry103.delete(0, END)
+                entry103.insert(END, BANNER[5])
+                entry104.delete(0, END)
+                entry104.insert(END, BANNER[10])
+                entry105.delete(0, END)
+                entry105.insert(END, BANNER[11])
+                entry106.delete(0, END)
+                entry106.insert(END, BANNER[6])
+                entry107.delete(0, END)
+                entry107.insert(END, BANNER[12])
 
         def command_8():
                 pass
@@ -113,8 +113,8 @@ def file0():
 	"""Open a file for editing."""
 	global FILE
 	FILE = askopenfilename(filetypes=[("Files", "*.pvr"), ("All Files", "*.*")])
-	entry12.delete(0, END)
-	entry12.insert(END, FILE)
+	entry102.delete(0, END)
+	entry102.insert(END, FILE)
 	print('file: ', FILE)
 
 #converter time to seconds
@@ -129,8 +129,8 @@ def file1():
 	"""Open a file for editing."""
 	global FILE2
 	FILE2 = askopenfilename(filetypes=[("Files", "*.mp4"), ("All Files", "*.*")])
-	entry1.delete(0, END)
-	entry1.insert(END, FILE2)
+	entry101.delete(0, END)
+	entry101.insert(END, FILE2)
 	print()
 
 #Create buttons
@@ -154,10 +154,11 @@ def button_1():
 def button_2():
         global button2
         button2 = not button2
+        count0 = 0
         def run():
                 Debugger1.command_1()
-                entry1.delete(0, END)
-                entry1.insert(END, count)
+                entry101.delete(0, END)
+                entry101.insert(END, count0)
                 print("Button_4")
                 
 
@@ -169,8 +170,8 @@ def button_3():
         global back
         back = not back
         print('Back: ', back)
-        entry.delete(0, END)
-        entry.insert(END, back)
+        entry102.delete(0, END)
+        entry102.insert(END, back)
         
 
 def button_4():
@@ -190,52 +191,52 @@ def button_5():
 
 
 def clear():
-        entry.delete(0, END)
-        entry1.delete(0, END)
-        entry2.delete(0, END)
-        entry3.delete(0, END)
-        entry4.delete(0, END)
-        entry5.delete(0, END)
-        entry6.delete(0, END)
-        entry7.delete(0, END)
-        entry8.delete(0, END)
-        entry9.delete(0, END)
-        entry10.delete(0, END)
-        entry11.delete(0, END)
-        entry12.delete(0, END)
-        entry13.delete(0, END)
-        entry14.delete(0, END)
+        entry100.delete(0, END)
+        entry101.delete(0, END)
+        entry102.delete(0, END)
+        entry103.delete(0, END)
+        entry104.delete(0, END)
+        entry105.delete(0, END)
+        entry106.delete(0, END)
+        entry107.delete(0, END)
+        entry108.delete(0, END)
+        entry109.delete(0, END)
+        entry110.delete(0, END)
+        entry111.delete(0, END)
+        entry112.delete(0, END)
+        entry113.delete(0, END)
+        entry114.delete(0, END)
 
         
 
 def add_camera():
 	global camera
-	camera = entry1.get()
+	camera = entry101.get()
 	print('Camera: ',camera)
-	entry1.delete(0, END)
+	entry101.delete(0, END)
 	
 
 def stop():
 	stop = True
-	entry2.delete(0, END)
-	entry3.delete(0, END)
-	entry4.delete(0, END)
-	entry5.delete(0, END)
-	entry6.delete(0, END)
-	entry7.delete(0, END)
-	entry8.delete(0, END)
-	entry9.delete(0, END)
-	entry10.delete(0, END)
-	entry11.delete(0, END)
+	entry100.delete(0, END)
+	entry101.delete(0, END)
+	entry102.delete(0, END)
+	entry103.delete(0, END)
+	entry104.delete(0, END)
+	entry105.delete(0, END)
+	entry106.delete(0, END)
+	entry107.delete(0, END)
+	entry108.delete(0, END)
+	entry109.delete(0, END)
 	print(stop)
 	
 
 def exit():
 	global stop
 	stop = True
-	entry1.delete(0, END)
-	entry2.delete(0, END)
-	entry3.delete(0, END)
+	entry100.delete(0, END)
+	entry102.delete(0, END)
+	entry103.delete(0, END)
 	print(stop)
 	window.destroy()
 	
@@ -361,18 +362,18 @@ def communication_wizard(object):
                 e104 = e_1_4.get()
                 e105 = e_1_5.get()
 
-                entry.delete(0, END)
-                entry.insert(END, e_1_0.get())
-                entry1.delete(0, END)
-                entry1.insert(END, e_1_1.get())
-                entry2.delete(0, END)
-                entry2.insert(END, e_1_2.get())
-                entry3.delete(0, END)
-                entry3.insert(END, e_1_3.get())
-                entry4.delete(0, END)
-                entry4.insert(END, e_1_4.get())
-                entry5.delete(0, END)
-                entry5.insert(END, e_1_5.get())
+                entry100.delete(0, END)
+                entry100.insert(END, e_1_0.get())
+                entry101.delete(0, END)
+                entry101.insert(END, e_1_1.get())
+                entry102.delete(0, END)
+                entry102.insert(END, e_1_2.get())
+                entry103.delete(0, END)
+                entry103.insert(END, e_1_3.get())
+                entry104.delete(0, END)
+                entry104.insert(END, e_1_4.get())
+                entry105.delete(0, END)
+                entry105.insert(END, e_1_5.get())
                 
                 #Serial/CAN Settings
                 e200 = e_2_0.get()
@@ -400,18 +401,18 @@ def communication_wizard(object):
                 e405 = e_4_5.get()
 
                 #Example insert data from menu tab2 into main window entry box
-                entry7.delete(0, END)
-                entry7.insert(END, e_2_0.get())
-                entry8.delete(0, END)
-                entry8.insert(END, e_2_1.get())
-                entry9.delete(0, END)
-                entry9.insert(END, e_2_2.get())
-                entry10.delete(0, END)
-                entry10.insert(END, e_2_3.get())
-                entry11.delete(0, END)
-                entry12.insert(END, e_2_4.get())
-                entry13.delete(0, END)
-                entry14.insert(END, e_2_0.get())
+                entry107.delete(0, END)
+                entry107.insert(END, e_2_0.get())
+                entry108.delete(0, END)
+                entry108.insert(END, e_2_1.get())
+                entry109.delete(0, END)
+                entry109.insert(END, e_2_2.get())
+                entry110.delete(0, END)
+                entry110.insert(END, e_2_3.get())
+                entry111.delete(0, END)
+                entry112.insert(END, e_2_4.get())
+                entry113.delete(0, END)
+                entry114.insert(END, e_2_0.get())
 
                 print("Tab_NUMBER: ", TAB_NUM)
                 print("E0: ", e100)
@@ -426,7 +427,6 @@ def communication_wizard(object):
         e_label2 = Label(tab_2, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
         e_label3 = Label(tab_3, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
         e_label4 = Label(tab_4, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
-
 
         #create buttons
         Button(tab_1, text="+").grid(row=9, column=1, sticky="wne")
@@ -495,8 +495,8 @@ def set_date():
 		month, day, year = video_date.split('/')
 		global DATE
 		DATE  = '0{}/0{}/{}'.format(day, month, year)
-		entry.delete(0, END)
-		entry.insert(END, DATE)
+		entry100.delete(0, END)
+		entry100.insert(END, DATE)
 		print('Date: ', DATE)
 		root.destroy()
 
@@ -509,6 +509,7 @@ def set_date():
 
 	# Excecute Tkinter
 	root.mainloop()
+
 
 #main screen
 window_tabs = Tk()
@@ -525,101 +526,101 @@ tabControl.pack(expand = 1, fill ="both")
 
 #entry box
 #window = Frame(window, relief=RAISED, bd=2)
-entry = Entry(window, width=10)
-entry1 = Entry(window, width=100)
-entry2 = Entry(window, width=10)
-entry3 = Entry(window, width=10)
-entry4 = Entry(window, width=10)
-entry5 = Entry(window, width=10)
-entry6 = Entry(window, width=10) 
-entry7 = Entry(window, width=10) 
-entry8 = Entry(window, width=10) 
-entry9 = Entry(window, width=10)
-entry10 = Entry(window, width=10)
-entry11 = Entry(window, width=10)
-entry12 = Entry(window, width=10)
-entry13 = Entry(window, width=10)
-entry14 = Entry(window, width=10)
-entry15 = Entry(window, width=10)
+entry100 = Entry(window, width=10)
+entry101 = Entry(window, width=100)
+entry102 = Entry(window, width=10)
+entry103 = Entry(window, width=10)
+entry104 = Entry(window, width=10)
+entry105 = Entry(window, width=10)
+entry106 = Entry(window, width=10) 
+entry107 = Entry(window, width=10) 
+entry108 = Entry(window, width=10) 
+entry109 = Entry(window, width=10)
+entry110 = Entry(window, width=10)
+entry111 = Entry(window, width=10)
+entry112 = Entry(window, width=10)
+entry113 = Entry(window, width=10)
+entry114 = Entry(window, width=10)
+entry115 = Entry(window, width=10)
 
 #buttons
 btn_file1 = Button(window, text="Import video", command=file1).grid(row=2, column=0, sticky="ew", padx=5)
-btn_1 = Button(window, text="Button_00", command=button_0).grid(row=3, column=0, sticky="ew", padx=5)
-btn_2 = Button(window, text="Button_01", command=button_1).grid(row=4, column=0, sticky="ew", padx=5)
-btn_3 = Button(window, text="Button_02", command=button_2).grid(row=5, column=0, sticky="ew", padx=5)
-btn_4 = Button(window, text="Button_03", command=button_3).grid(row=6, column=0, sticky="ew", padx=5)
-btn_5 = Button(window, text="Button_04", command=button_4).grid(row=7, column=0, sticky="ew", padx=5)
-btn_6 = Button(window, text="Button_05", command=button_5).grid(row=8, column=0, sticky="ew", padx=5)
-btn_7 = Button(window, text="Button_06", command=button_5).grid(row=9, column=0, sticky="ew", padx=5)
-btn_8 = Button(window, text="Button_07", command=button_0).grid(row=10, column=0, sticky="ew", padx=5)
-btn_9 = Button(window, text="Button_08", command=button_1).grid(row=11, column=0, sticky="ew", padx=5)
-btn_10 = Button(window, text="Button_09", command=button_2).grid(row=12, column=0, sticky="ew", padx=5)
-btn_11 = Button(window, text="Button_10", command=button_3).grid(row=13, column=0, sticky="ew", padx=5)
-btn_12 = Button(window, text="Button_11", command=button_4).grid(row=14, column=0, sticky="ew", padx=5)
-btn_13 = Button(window, text="Button_12", command=button_5).grid(row=15, column=0, sticky="ew", padx=5)
-btn_14 = Button(window, text="Button_13", command=button_5).grid(row=16, column=0, sticky="ew", padx=5)
-btn_14 = Button(window, text="Button_14", command=button_5).grid(row=17, column=0, sticky="ew", padx=5)
+btn_100 = Button(window, text="Button_00", command=button_0).grid(row=3, column=0, sticky="ew", padx=5)
+btn_101 = Button(window, text="Button_01", command=button_1).grid(row=4, column=0, sticky="ew", padx=5)
+btn_102 = Button(window, text="Button_02", command=button_2).grid(row=5, column=0, sticky="ew", padx=5)
+btn_103 = Button(window, text="Button_03", command=button_3).grid(row=6, column=0, sticky="ew", padx=5)
+btn_104 = Button(window, text="Button_04", command=button_4).grid(row=7, column=0, sticky="ew", padx=5)
+btn_105 = Button(window, text="Button_05", command=button_5).grid(row=8, column=0, sticky="ew", padx=5)
+btn_106 = Button(window, text="Button_06", command=button_5).grid(row=9, column=0, sticky="ew", padx=5)
+btn_107 = Button(window, text="Button_07", command=button_0).grid(row=10, column=0, sticky="ew", padx=5)
+btn_108 = Button(window, text="Button_08", command=button_1).grid(row=11, column=0, sticky="ew", padx=5)
+btn_109 = Button(window, text="Button_09", command=button_2).grid(row=12, column=0, sticky="ew", padx=5)
+btn_110 = Button(window, text="Button_10", command=button_3).grid(row=13, column=0, sticky="ew", padx=5)
+btn_111 = Button(window, text="Button_11", command=button_4).grid(row=14, column=0, sticky="ew", padx=5)
+btn_112 = Button(window, text="Button_12", command=button_5).grid(row=15, column=0, sticky="ew", padx=5)
+btn_113 = Button(window, text="Button_13", command=button_5).grid(row=16, column=0, sticky="ew", padx=5)
+btn_114 = Button(window, text="Button_14", command=button_5).grid(row=17, column=0, sticky="ew", padx=5)
 btn_stop = Button(window, text="Stop", command=stop).grid(row=23, column=0, sticky="ew", padx=5)
 
 
 #settings button
-btn_set_1 = Button(window, text="+", command=lambda:settings_menu(0)).grid(row=3, column=3, sticky="ew", padx=5)
-btn_set_2 = Button(window, text="+", command=lambda:settings_menu(1)).grid(row=4, column=3, sticky="ew", padx=5)
-btn_set_3 = Button(window, text="+", command=lambda:settings_menu(2)).grid(row=5, column=3, sticky="ew", padx=5)
-btn_set_4 = Button(window, text="+", command=lambda:settings_menu(3)).grid(row=6, column=3, sticky="ew", padx=5)
-btn_set_5 = Button(window, text="+", command=lambda:settings_menu(4)).grid(row=7, column=3, sticky="ew", padx=5)
-btn_6 = Button(window, text="+",command=lambda:settings_menu(5) ).grid(row=8, column=3, sticky="ew", padx=5)
-btn_set_7 = Button(window, text="+", command=lambda:settings_menu(6)).grid(row=9, column=3, sticky="ew", padx=5)
-btn_set_8= Button(window, text="+", command=lambda:settings_menu(7)).grid(row=10, column=3, sticky="ew", padx=5)
-btn_set_9 = Button(window, text="+", command=lambda:settings_menu(8)).grid(row=11, column=3, sticky="ew", padx=5)
-btn_set_10 = Button(window, text="+", command=lambda:settings_menu(9)).grid(row=12, column=3, sticky="ew", padx=5)
-btn_set_11 = Button(window, text="+", command=lambda:settings_menu(10)).grid(row=13, column=3, sticky="ew", padx=5)
-btn_set_12 = Button(window, text="+", command=lambda:settings_menu(11)).grid(row=14, column=3, sticky="ew", padx=5)
-btn_set_13 = Button(window, text="+", command=lambda:settings_menu(12)).grid(row=15, column=3, sticky="ew", padx=5)
-btn_set_14 = Button(window, text="+", command=lambda:settings_menu(13)).grid(row=16, column=3, sticky="ew", padx=5)
-btn_set_15 = Button(window, text="+", command=lambda:settings_menu(14)).grid(row=17, column=3, sticky="ew", padx=5)
-btn_set_date = Button(window, text = "Select Date", command = set_date).grid(row=18, column=0, sticky="ew", padx=5) #.pack(pady = 20)
-btn_file0 = Button(window, text="Import file", command=file0).grid(row=19, column=0, sticky="ew", padx=5)
-btn_add_camera = Button(window, text="Add Camera", command=add_camera).grid(row=20, column=0, sticky="ew", padx=5)
-btn_clear = Button(window, text="Clear", command=clear).grid(row=21, column=0, sticky="ew", padx=5)
-btn_exit = Button(window, text="Exit", command=exit).grid(row=24, column=0, sticky="ew", padx=5)
+btn_set_100 = Button(window, text="+", command=lambda:settings_menu(0)).grid(row=3, column=3, sticky="ew", padx=5)
+btn_set_101 = Button(window, text="+", command=lambda:settings_menu(1)).grid(row=4, column=3, sticky="ew", padx=5)
+btn_set_102 = Button(window, text="+", command=lambda:settings_menu(2)).grid(row=5, column=3, sticky="ew", padx=5)
+btn_set_103 = Button(window, text="+", command=lambda:settings_menu(3)).grid(row=6, column=3, sticky="ew", padx=5)
+btn_set_104 = Button(window, text="+", command=lambda:settings_menu(4)).grid(row=7, column=3, sticky="ew", padx=5)
+btn_105 = Button(window, text="+",command=lambda:settings_menu(5) ).grid(row=8, column=3, sticky="ew", padx=5)
+btn_set_106 = Button(window, text="+", command=lambda:settings_menu(6)).grid(row=9, column=3, sticky="ew", padx=5)
+btn_set_107 = Button(window, text="+", command=lambda:settings_menu(7)).grid(row=10, column=3, sticky="ew", padx=5)
+btn_set_108 = Button(window, text="+", command=lambda:settings_menu(8)).grid(row=11, column=3, sticky="ew", padx=5)
+btn_set_109 = Button(window, text="+", command=lambda:settings_menu(9)).grid(row=12, column=3, sticky="ew", padx=5)
+btn_set_110 = Button(window, text="+", command=lambda:settings_menu(10)).grid(row=13, column=3, sticky="ew", padx=5)
+btn_set_111 = Button(window, text="+", command=lambda:settings_menu(11)).grid(row=14, column=3, sticky="ew", padx=5)
+btn_set_112 = Button(window, text="+", command=lambda:settings_menu(12)).grid(row=15, column=3, sticky="ew", padx=5)
+btn_set_113 = Button(window, text="+", command=lambda:settings_menu(13)).grid(row=16, column=3, sticky="ew", padx=5)
+btn_set_114 = Button(window, text="+", command=lambda:settings_menu(14)).grid(row=17, column=3, sticky="ew", padx=5)
+btn_set_date = Button(window, text = "Select Date", command = set_date).grid(row=18, column=0, sticky="ew", padx=5) # tab 1 main window
+btn_file0 = Button(window, text="Import file", command=file0).grid(row=19, column=0, sticky="ew", padx=5) # tab 1 main window
+btn_add_camera = Button(window, text="Add Camera", command=add_camera).grid(row=20, column=0, sticky="ew", padx=5) # tab 1 main window
+btn_clear = Button(window, text="Clear", command=clear).grid(row=21, column=0, sticky="ew", padx=5) # tab 1 main window
+btn_exit = Button(window, text="Exit", command=exit).grid(row=24, column=0, sticky="ew", padx=5) #tab 1 main window
 
 #labels
-l1 = Label(window, text="Debugger1 Status:").grid(row=0, column=0, sticky="wne", padx=5)
-l1 = Label(window, text="00: ").grid(row=3, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="01: ").grid(row=4, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="02: ").grid(row=5, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="03: ").grid(row=6, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="04: ").grid(row=7, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="05: ").grid(row=8, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="06: ").grid(row=9, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="07: ").grid(row=10, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="08: ").grid(row=11, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="09: ").grid(row=12, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="10: ").grid(row=13, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="11: ").grid(row=14, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="12: ").grid(row=15, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="13: ").grid(row=16, column=1, sticky="wn", padx=5)
-l1 = Label(window, text="14: ").grid(row=17, column=1, sticky="wn", padx=5)
+l1 = Label(window, text="Debugger1 Status:").grid(row=0, column=0, sticky="wne", padx=5) #tab 1 main window
+l100 = Label(window, text="00: ").grid(row=3, column=1, sticky="wn", padx=5)
+l101 = Label(window, text="01: ").grid(row=4, column=1, sticky="wn", padx=5)
+l102 = Label(window, text="02: ").grid(row=5, column=1, sticky="wn", padx=5)
+l103 = Label(window, text="03: ").grid(row=6, column=1, sticky="wn", padx=5)
+l104 = Label(window, text="04: ").grid(row=7, column=1, sticky="wn", padx=5)
+l105 = Label(window, text="05: ").grid(row=8, column=1, sticky="wn", padx=5)
+l106 = Label(window, text="06: ").grid(row=9, column=1, sticky="wn", padx=5)
+l107 = Label(window, text="07: ").grid(row=10, column=1, sticky="wn", padx=5)
+l108 = Label(window, text="08: ").grid(row=11, column=1, sticky="wn", padx=5)
+l109 = Label(window, text="09: ").grid(row=12, column=1, sticky="wn", padx=5)
+l110 = Label(window, text="10: ").grid(row=13, column=1, sticky="wn", padx=5)
+l111 = Label(window, text="11: ").grid(row=14, column=1, sticky="wn", padx=5)
+l112 = Label(window, text="12: ").grid(row=15, column=1, sticky="wn", padx=5)
+l113 = Label(window, text="13: ").grid(row=16, column=1, sticky="wn", padx=5)
+l114 = Label(window, text="14: ").grid(row=17, column=1, sticky="wn", padx=5)
 
 
 #show entry box
-entry.grid(row=3, column=2, sticky="wne", padx=5)
-entry1.grid(row=4, column=2, sticky="wne", padx=5)
-entry2.grid(row=5, column=2, sticky="wne", padx=5)
-entry3.grid(row=6, column=2, sticky="wne", padx=5)
-entry4.grid(row=7, column=2, sticky="wne", padx=5)
-entry5.grid(row=8, column=2, sticky="wne", padx=5)
-entry6.grid(row=9, column=2, sticky="wne", padx=5)
-entry7.grid(row=10, column=2, sticky="wne", padx=5)
-entry8.grid(row=11, column=2, sticky="wne", padx=5)
-entry9.grid(row=12, column=2, sticky="wne", padx=5)
-entry10.grid(row=13, column=2, sticky="wne", padx=5)
-entry11.grid(row=14, column=2, sticky="wne", padx=5)
-entry12.grid(row=15, column=2, sticky="wne", padx=5)
-entry13.grid(row=16, column=2, sticky="wne", padx=5)
-entry14.grid(row=17, column=2, sticky="wne", padx=5)
-entry15.grid(row=18, column=2, sticky="wne", padx=5)
+entry100.grid(row=3, column=2, sticky="wne", padx=5)
+entry101.grid(row=4, column=2, sticky="wne", padx=5)
+entry102.grid(row=5, column=2, sticky="wne", padx=5)
+entry103.grid(row=6, column=2, sticky="wne", padx=5)
+entry104.grid(row=7, column=2, sticky="wne", padx=5)
+entry105.grid(row=8, column=2, sticky="wne", padx=5)
+entry106.grid(row=9, column=2, sticky="wne", padx=5)
+entry107.grid(row=10, column=2, sticky="wne", padx=5)
+entry108.grid(row=11, column=2, sticky="wne", padx=5)
+entry109.grid(row=12, column=2, sticky="wne", padx=5)
+entry110.grid(row=13, column=2, sticky="wne", padx=5)
+entry111.grid(row=14, column=2, sticky="wne", padx=5)
+entry112.grid(row=15, column=2, sticky="wne", padx=5)
+entry113.grid(row=16, column=2, sticky="wne", padx=5)
+entry114.grid(row=17, column=2, sticky="wne", padx=5)
+entry115.grid(row=18, column=2, sticky="wne", padx=5)
 
 #create window
 window_tabs.mainloop()

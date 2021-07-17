@@ -427,13 +427,13 @@ def communication_wizard(object):
         Button(tab_1, text="+").grid(row=9, column=1, sticky="wne")
         Button(tab_1, text="-").grid(row=10, column=1, sticky="wne")
         Button(tab_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
-        Button(tab_1, text="Settings_4").grid(row=12, column=1, sticky="wne")
+        Button(tab_1, text="Setting_4").grid(row=12, column=1, sticky="wne")
 
         #tab 2 settings menu buttons
         Button(tab_2, text="+").grid(row=9, column=1, sticky="wne")
         Button(tab_2, text="-").grid(row=10, column=1, sticky="wne")
         Button(tab_2, text="Setting_3").grid(row=11, column=1, sticky="wne")
-        Button(tab_2, text="Settings_4").grid(row=12, column=1, sticky="wne")
+        Button(tab_2, text="Setting_4").grid(row=12, column=1, sticky="wne")
         def kill_set():
                 Tabs.destroy()
 
@@ -468,7 +468,7 @@ def communication_wizard(object):
         e_2_5.grid(row=8, column=1, sticky="wne")
         Tabs.mainloop()
 
-#call funtions here
+#call settings funtions here
 def settings_menu(object):
         global button1
         global button_select
@@ -476,6 +476,17 @@ def settings_menu(object):
         button1 = not button1
         print('Pause again: ', button1)
         communication_wizard(object)
+
+#call "control" functions here
+#call funtions here
+def control_menu(object):
+        global button1
+        global button_select
+        button_select = object
+        button1 = not button1
+        print('Pause again: ', button1)
+        troubleshoot_wizard(object)
+
                 
 def set_date():
 	# Create Calendar Object
@@ -517,10 +528,255 @@ tabControl = ttk.Notebook(window_tabs)
 
 window = ttk.Frame(tabControl)
 window_1 = ttk.Frame(tabControl)
+troubleshoot_wizard = ttk.Frame(tabControl)
 
 tabControl.add(window, text ='Sensor')
 tabControl.add(window_1, text ='Diagnostics')
 tabControl.pack(expand = 1, fill ="both")
+
+
+def troubleshoot_wizard():
+        troubleshooter = Tk()
+        troubleshooter.geometry("400x400")
+        troubleshooter.title("Troubleshoot Wizard")
+        tabControl = ttk.Notebook(troubleshooter)
+
+        control_1 = ttk.Frame(tabControl)
+        control_2 = ttk.Frame(tabControl)
+        control_3 = ttk.Frame(tabControl)
+        control_4 = ttk.Frame(tabControl)
+
+        tabControl.add(control_1, text ='Channel: 1')
+        tabControl.add(control_2, text ='Channel: 2')
+        tabControl.add(control_3, text ='Channel: 3')
+        tabControl.add(control_4, text ='Channel: 4')
+        tabControl.pack(expand = 8, fill ="both")
+
+        #control 1 menu label
+        tabControl = ttk.Notebook(control_1)
+        cl1 = Label(control_1, text="Control Setting: 1 ").grid(row=2, column=0, sticky="wn", padx=5)
+        cl1 = Label(control_1, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
+        cl2 = Label(control_1, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
+        cl3 = Label(control_1, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
+        cl4 = Label(control_1, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
+        cl5 = Label(control_1, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
+        cl6 = Label(control_1, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+
+        #control 2 menu label
+        tabControl = ttk.Notebook(control_2)
+        cl1 = Label(control_2, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
+        cl1 = Label(control_2, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
+        cl2 = Label(control_2, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
+        cl3 = Label(control_2, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
+        cl4 = Label(control_2, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
+        cl5 = Label(control_2, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
+        cl6 = Label(control_2, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+
+        #control 3 menu label
+        tabControl = ttk.Notebook(control_3)
+        cl1 = Label(control_3, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
+        cl1 = Label(control_3, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
+        cl2 = Label(control_3, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
+        cl3 = Label(control_3, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
+        cl4 = Label(control_3, text="Value_3 ").grid(row=6, column=0, sticky="wn", padx=5)
+        cl5 = Label(control_3, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
+        cl6 = Label(control_3, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+
+        #control 4 menu label
+        tabControl = ttk.Notebook(control_4)
+        cl1 = Label(control_4, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
+        cl1 = Label(control_4, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
+        cl2 = Label(control_4, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
+        cl3 = Label(control_4, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
+        cl4 = Label(control_4, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
+        cl5 = Label(control_4, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
+        cl6 = Label(control_4, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        
+        #control tab 1 entry box
+        c_1_0 = Entry(control_1, width=20)
+        c_1_1 = Entry(control_1, width=20)
+        c_1_2 = Entry(control_1, width=20)
+        c_1_3 = Entry(control_1, width=20)
+        c_1_4 = Entry(control_1, width=20)
+        c_1_5 = Entry(control_1, width=20)
+
+        #control tab 2 entry box
+        c_2_0 = Entry(control_2, width=20)
+        c_2_1 = Entry(control_2, width=20)
+        c_2_2 = Entry(control_2, width=20)
+        c_2_3 = Entry(control_2, width=20)
+        c_2_4 = Entry(control_2, width=20)
+        c_2_5 = Entry(control_2, width=20)
+
+        #control tab 3 entry box
+        c_3_0 = Entry(control_3, width=20)
+        c_3_1 = Entry(control_3, width=20)
+        c_3_2 = Entry(control_3, width=20)
+        c_3_3 = Entry(control_3, width=20)
+        c_3_4 = Entry(control_3, width=20)
+        c_3_5 = Entry(control_3, width=20)
+
+        #control tab 4 entry box
+        c_4_0 = Entry(control_4, width=20)
+        c_4_1 = Entry(control_4, width=20)
+        c_4_2 = Entry(control_4, width=20)
+        c_4_3 = Entry(control_4, width=20)
+        c_4_4 = Entry(control_4, width=20)
+        c_4_5 = Entry(control_4, width=20)
+
+        #get control 1, 2, 3, and 4 entries from entry box
+        def get_entry(TAB_NUM):
+                #control tab 1
+                global c100 # Value_0
+                global c101 # Value_1
+                global c102 # Value_2
+                global c103 # Value_3
+                global c104 # Value_4
+                global c105 # Value_5
+
+                #control tab 2
+                global c200 # Value_0
+                global c201 # Value_1
+                global c202 # Value_2
+                global c203 # Value_3
+                global c204 # Value_4
+                global c205 # Value_5
+
+                #control tab 3
+                global c300 # Value_0
+                global c301 # Value_1
+                global c302 # Value_2
+                global c303 # Value_3
+                global c304 # Value_4
+                global c305 # Value_5
+
+                #control tab 4
+                global c400 # Value_0
+                global c401 # Value_1
+                global c402 # Value_2
+                global c403 # Value_3
+                global c404 # Value_4
+                global c405 # Value_5
+
+                #control tab 1 get Values 0, 1, 2, 3, 4, 5
+                c100 = c_1_0.get()
+                c101 = c_1_1.get()
+                c102 = c_1_2.get()
+                c103 = c_1_3.get()
+                c104 = c_1_4.get()
+                c105 = c_1_5.get()
+
+                #test - getting values from TCP settings entry boxes and display them into entry boxes below:
+                entry100.delete(0, END)
+                entry100.insert(END, c_1_0.get())
+                entry101.delete(0, END)
+                entry101.insert(END, c_1_1.get())
+                entry102.delete(0, END)
+                entry102.insert(END, c_1_2.get())
+                entry103.delete(0, END)
+                entry103.insert(END, c_1_3.get())
+                entry104.delete(0, END)
+                entry104.insert(END, c_1_4.get())
+                entry105.delete(0, END)
+                entry105.insert(END, c_1_5.get())
+                
+                #tab 2 get Serial/CAN Settings
+                c200 = c_2_0.get()
+                c201 = c_2_1.get()
+                c202 = c_2_2.get()
+                c203 = c_2_3.get()
+                c204 = c_2_4.get()
+                c205 = c_2_5.get()
+
+                #tab 3 get Bluetooth settings
+                c300 = c_3_0.get()
+                c301 = c_3_1.get()
+                c302 = c_3_2.get()
+                c303 = c_3_3.get()
+                c304 = c_3_4.get()
+                c305 = c_3_5.get()
+
+                #tab 4 get Wifi settings
+                c400 = c_4_0.get()
+                c401 = c_4_1.get()
+                c402 = c_4_2.get()
+                c403 = c_4_3.get()
+                c404 = c_4_4.get()
+                c405 = c_4_5.get()
+
+                #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
+                entry107.delete(0, END)
+                entry107.insert(END, c_2_0.get())
+                entry108.delete(0, END)
+                entry108.insert(END, c_2_1.get())
+                entry109.delete(0, END)
+                entry109.insert(END, c_2_2.get())
+                entry110.delete(0, END)
+                entry110.insert(END, c_2_3.get())
+                entry111.delete(0, END)
+                entry112.insert(END, c_2_4.get())
+                entry113.delete(0, END)
+                entry114.insert(END, c_2_0.get())
+
+                print("Tab_NUMBER: ", TAB_NUM)
+                print("E0: ", c100)
+                print("E1: ", c101)
+                print("E2: ", c102)
+                print("E3: ", c103)
+                print("E4: ", c104)
+                print("E5: ", c105)
+
+        #control tab 1, 2, 3, and 4 main window channel label
+        channel_select = 0
+        c_label1 = Label(control_1, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        c_label2 = Label(control_2, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        c_label3 = Label(control_3, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        c_label4 = Label(control_4, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
+
+        #control tab 1 buttons
+        btn_1_c1 = Button(control_1, text="+").grid(row=9, column=1, sticky="wne")
+        btn_1_c2 = Button(control_1, text="-").grid(row=10, column=1, sticky="wne")
+        btn_1_c3 = Button(control_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
+        btn_1_c4 = Button(control_1, text="Setting_4").grid(row=12, column=1, sticky="wne")
+
+        #control tab 2 buttons
+        btn_2_c1 = Button(control_2, text="+").grid(row=9, column=1, sticky="wne")
+        btn_2_c2 = Button(control_2, text="-").grid(row=10, column=1, sticky="wne")
+        btn_2_c3 = Button(control_2, text="Setting_3").grid(row=11, column=1, sticky="wne")
+        btn_2_c4 = Button(control_2, text="Setting_4").grid(row=12, column=1, sticky="wne")
+        def kill_set():
+                troubleshooter.destroy()
+
+        def submit():
+                message1 = "Submitted"
+                print("Message1: ", message1)
+                troubleshooter.destroy()
+
+        #control tab 1 buttons
+        btn_1_c5 = Button(control_1, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
+        btn_2_c6 = Button(control_1, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+
+        #control tab 2 buttons
+        btn_2_c5 = Button(control_2, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
+        btn_2_c6 = Button(control_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+
+        #control tab 1 entry boxes on screen
+        c_1_0.grid(row=3, column=1, sticky="wne")
+        c_1_1.grid(row=4, column=1, sticky="wne")
+        c_1_2.grid(row=5, column=1, sticky="wne")
+        c_1_3.grid(row=6, column=1, sticky="wne")
+        c_1_4.grid(row=7, column=1, sticky="wne")
+        c_2_5.grid(row=8, column=1, sticky="wne")
+
+        #control tab 2 show entry boxes on screen
+        c_2_0.grid(row=3, column=1, sticky="wne")
+        c_2_1.grid(row=4, column=1, sticky="wne")
+        c_2_2.grid(row=5, column=1, sticky="wne")
+        c_2_3.grid(row=6, column=1, sticky="wne")
+        c_2_4.grid(row=7, column=1, sticky="wne")
+        c_2_5.grid(row=8, column=1, sticky="wne")
+        troubleshooter.mainloop()
+
 
 #tab 1 main window entry box
 #window = Frame(window, relief=RAISED, bd=2)
@@ -559,6 +815,9 @@ btn_112 = Button(window, text="Button_12", command=button_5).grid(row=15, column
 btn_113 = Button(window, text="Button_13", command=button_5).grid(row=16, column=0, sticky="ew", padx=5)
 btn_114 = Button(window, text="Button_14", command=button_5).grid(row=17, column=0, sticky="ew", padx=5)
 btn_stop = Button(window, text="Stop", command=stop).grid(row=23, column=0, sticky="ew", padx=5)
+
+#tab 2 main window buttons
+btn_200 = Button(window_1, text="Troubleshooter", command=troubleshoot_wizard).grid(row=5, column=0, sticky="ew", padx=5)
 
 #tab 1 main window settings button
 btn_set_100 = Button(window, text="+", command=lambda:settings_menu(0)).grid(row=3, column=3, sticky="ew", padx=5)
@@ -599,6 +858,9 @@ l111 = Label(window, text="11: ").grid(row=14, column=1, sticky="wn", padx=5)
 l112 = Label(window, text="12: ").grid(row=15, column=1, sticky="wn", padx=5)
 l113 = Label(window, text="13: ").grid(row=16, column=1, sticky="wn", padx=5)
 l114 = Label(window, text="14: ").grid(row=17, column=1, sticky="wn", padx=5)
+
+#tab 2 main window label
+l200 = Label(window_1, text="00: ").grid(row=3, column=0, sticky="wn", padx=5)
 
 #tab 1 show main window entry box
 entry100.grid(row=3, column=2, sticky="wne", padx=5)

@@ -142,15 +142,12 @@ def button_0():
 	thread = threading.Thread(target=run1)
 	thread.start()
 	print(button0)
-	
-
+#
 def button_1():
-	global button1
-	button1 = not button1
-	print('Pause again: ', button1)
-	#btn_set1()
-	
-
+        global button1
+        button1 = not button1
+        print('Pause again: ', button1)
+#
 def button_2():
         global button2
         button2 = not button2
@@ -161,7 +158,6 @@ def button_2():
                 entry101.insert(END, count0)
                 print("Button_4")
                 
-
         thread1 = threading.Thread(target=run)
         thread1.start()
         print(button2)
@@ -173,13 +169,11 @@ def button_3():
         entry102.delete(0, END)
         entry102.insert(END, back)
         
-
 def button_4():
 	global forward
 	forward = not forward
 	print('Forward: ', forward)
 	
-
 def button_5():
         print("Button 5")
         def run2():
@@ -188,7 +182,6 @@ def button_5():
                 print(button5)
         thread2 = threading.Thread(target=run2)
         thread2.start()
-
 
 def clear():
         entry100.delete(0, END)
@@ -207,15 +200,12 @@ def clear():
         entry113.delete(0, END)
         entry114.delete(0, END)
 
-        
-
 def add_camera():
 	global camera
 	camera = entry101.get()
 	print('Camera: ',camera)
 	entry101.delete(0, END)
 	
-
 def stop():
 	stop = True
 	entry100.delete(0, END)
@@ -230,7 +220,6 @@ def stop():
 	entry109.delete(0, END)
 	print(stop)
 	
-
 def exit():
 	global stop
 	stop = True
@@ -240,8 +229,7 @@ def exit():
 	print(stop)
 	window.destroy()
 	
-
-#settings tab
+#settings menu main tab
 def communication_wizard(object):
         Tabs = Tk()
         Tabs.geometry("400x400")
@@ -259,6 +247,7 @@ def communication_wizard(object):
         tabControl.add(tab_4, text ='Wifi')
         tabControl.pack(expand = 8, fill ="both")
 
+        #tab 1 TCP settings menu label
         tabControl = ttk.Notebook(tab_1)
         l1 = Label(tab_1, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
         l1 = Label(tab_1, text="IP address: ").grid(row=3, column=0, sticky="wn", padx=5)
@@ -268,6 +257,7 @@ def communication_wizard(object):
         l5 = Label(tab_1, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
         l6 = Label(tab_1, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
+        #tab 2 Serial/CAN settings menu label
         tabControl = ttk.Notebook(tab_2)
         l1 = Label(tab_2, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
         l1 = Label(tab_2, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
@@ -277,6 +267,7 @@ def communication_wizard(object):
         l5 = Label(tab_2, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
         l6 = Label(tab_2, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
+        #tab 3 Bluetooth settings menu label
         tabControl = ttk.Notebook(tab_3)
         l1 = Label(tab_3, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
         l1 = Label(tab_3, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
@@ -286,6 +277,7 @@ def communication_wizard(object):
         l5 = Label(tab_3, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
         l6 = Label(tab_3, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
+        #tab 3 Wifi settings menu label
         tabControl = ttk.Notebook(tab_4)
         l1 = Label(tab_4, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
         l1 = Label(tab_4, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
@@ -295,7 +287,7 @@ def communication_wizard(object):
         l5 = Label(tab_4, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
         l6 = Label(tab_4, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
         
-        #creat entry boxes
+        #tab 1 TCP settings menu entry box
         e_1_0 = Entry(tab_1, width=20)
         e_1_1 = Entry(tab_1, width=20)
         e_1_2 = Entry(tab_1, width=20)
@@ -303,6 +295,7 @@ def communication_wizard(object):
         e_1_4 = Entry(tab_1, width=20)
         e_1_5 = Entry(tab_1, width=20)
 
+        #tab 2 Serial/CAN settings menu entry box
         e_2_0 = Entry(tab_2, width=20)
         e_2_1 = Entry(tab_2, width=20)
         e_2_2 = Entry(tab_2, width=20)
@@ -310,6 +303,7 @@ def communication_wizard(object):
         e_2_4 = Entry(tab_2, width=20)
         e_2_5 = Entry(tab_2, width=20)
 
+        #tab 3 Buetooth settings menu entry box
         e_3_0 = Entry(tab_3, width=20)
         e_3_1 = Entry(tab_3, width=20)
         e_3_2 = Entry(tab_3, width=20)
@@ -317,6 +311,7 @@ def communication_wizard(object):
         e_3_4 = Entry(tab_3, width=20)
         e_3_5 = Entry(tab_3, width=20)
 
+        #tab 3 Wifi settings menu entry box
         e_4_0 = Entry(tab_4, width=20)
         e_4_1 = Entry(tab_4, width=20)
         e_4_2 = Entry(tab_4, width=20)
@@ -326,35 +321,35 @@ def communication_wizard(object):
 
 
         def get_entry(TAB_NUM):
-                global e100
-                global e101
-                global e102
-                global e103
-                global e104
-                global e105
+                global e100 # TCP
+                global e101 # TCP
+                global e102 # TCP
+                global e103 # TCP
+                global e104 # TCP
+                global e105 # TCP
 
-                global e200
-                global e201
-                global e202
-                global e203
-                global e204
-                global e205
+                global e200 # Serial/CAN
+                global e201 # Serial/CAN
+                global e202 # Serial/CAN
+                global e203 # Serial/CAN
+                global e204 # Serial/CAN
+                global e205 # Serial/CAN
 
-                global e300
-                global e301
-                global e302
-                global e303
-                global e304
-                global e305
+                global e300 # Bluetooth
+                global e301 # Bluetooth
+                global e302 # Bluetooth
+                global e303 # Bluetooth
+                global e304 # Bluetooth
+                global e305 # Bluetooth
 
-                global e400
-                global e401
-                global e402
-                global e403
-                global e404
-                global e405
+                global e400 # Wifi
+                global e401 # Wifi
+                global e402 # Wifi
+                global e403 # wifi
+                global e404 # wifi
+                global e405 # wifi
 
-                #TCP settings
+                #get tab 1 TCP settings
                 e100 = e_1_0.get()
                 e101 = e_1_1.get()
                 e102 = e_1_2.get()
@@ -362,6 +357,7 @@ def communication_wizard(object):
                 e104 = e_1_4.get()
                 e105 = e_1_5.get()
 
+                #test - getting values from TCP settings entry boxes and display them into entry boxes below:
                 entry100.delete(0, END)
                 entry100.insert(END, e_1_0.get())
                 entry101.delete(0, END)
@@ -375,7 +371,7 @@ def communication_wizard(object):
                 entry105.delete(0, END)
                 entry105.insert(END, e_1_5.get())
                 
-                #Serial/CAN Settings
+                #get tab 2 Serial/CAN Settings
                 e200 = e_2_0.get()
                 e201 = e_2_1.get()
                 e202 = e_2_2.get()
@@ -384,7 +380,7 @@ def communication_wizard(object):
                 e205 = e_2_5.get()
 
 
-                #Bluetooth Settings
+                #get tab 3 Bluetooth settings
                 e300 = e_3_0.get()
                 e301 = e_3_1.get()
                 e302 = e_3_2.get()
@@ -392,7 +388,7 @@ def communication_wizard(object):
                 e304 = e_3_4.get()
                 e305 = e_3_5.get()
 
-                #Wifi Settings
+                #get tab 4 Wifi settings
                 e400 = e_4_0.get()
                 e401 = e_4_1.get()
                 e402 = e_4_2.get()
@@ -400,7 +396,7 @@ def communication_wizard(object):
                 e404 = e_4_4.get()
                 e405 = e_4_5.get()
 
-                #Example insert data from menu tab2 into main window entry box
+                #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
                 entry107.delete(0, END)
                 entry107.insert(END, e_2_0.get())
                 entry108.delete(0, END)
@@ -422,18 +418,19 @@ def communication_wizard(object):
                 print("E4: ", e104)
                 print("E5: ", e105)
 
-        #create channel labels
+        #tab 1, 2, 3, and 4 settings window menu labels
         e_label1 = Label(tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
         e_label2 = Label(tab_2, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
         e_label3 = Label(tab_3, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
         e_label4 = Label(tab_4, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
 
-        #create buttons
+        #tab 1 settings menu buttons
         Button(tab_1, text="+").grid(row=9, column=1, sticky="wne")
         Button(tab_1, text="-").grid(row=10, column=1, sticky="wne")
         Button(tab_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
         Button(tab_1, text="Settings_4").grid(row=12, column=1, sticky="wne")
 
+        #tab 2 settings menu buttons
         Button(tab_2, text="+").grid(row=9, column=1, sticky="wne")
         Button(tab_2, text="-").grid(row=10, column=1, sticky="wne")
         Button(tab_2, text="Setting_3").grid(row=11, column=1, sticky="wne")
@@ -447,14 +444,15 @@ def communication_wizard(object):
                 get_entry(button_select)
                 Tabs.destroy()
 
-
+        #tab 1 settings menu buttons
         Button(tab_1, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
         Button(tab_1, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
-        
+
+        #tab 2 settings menu buttons
         Button(tab_2, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
         Button(tab_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
 
-        #show entry boxes on screen
+        #tab 1 settings menu window show entry boxes on screen
         e_1_0.grid(row=3, column=1, sticky="wne")
         e_1_1.grid(row=4, column=1, sticky="wne")
         e_1_2.grid(row=5, column=1, sticky="wne")
@@ -462,6 +460,7 @@ def communication_wizard(object):
         e_1_4.grid(row=7, column=1, sticky="wne")
         e_2_5.grid(row=8, column=1, sticky="wne")
 
+        #tab 2 settings menu window show entry boxes on screen
         e_2_0.grid(row=3, column=1, sticky="wne")
         e_2_1.grid(row=4, column=1, sticky="wne")
         e_2_2.grid(row=5, column=1, sticky="wne")
@@ -470,6 +469,7 @@ def communication_wizard(object):
         e_2_5.grid(row=8, column=1, sticky="wne")
         Tabs.mainloop()
 
+#call funtions here
 def settings_menu(object):
         global button1
         global button_select
@@ -510,8 +510,7 @@ def set_date():
 	# Excecute Tkinter
 	root.mainloop()
 
-
-#main screen
+#main window screen
 window_tabs = Tk()
 window_tabs.geometry("800x800")
 window_tabs.title("Debugger1")
@@ -524,7 +523,7 @@ tabControl.add(window, text ='Sensor')
 tabControl.add(window_1, text ='Diagnostics')
 tabControl.pack(expand = 1, fill ="both")
 
-#entry box
+#tab 1 main window entry box
 #window = Frame(window, relief=RAISED, bd=2)
 entry100 = Entry(window, width=10)
 entry101 = Entry(window, width=100)
@@ -543,7 +542,7 @@ entry113 = Entry(window, width=10)
 entry114 = Entry(window, width=10)
 entry115 = Entry(window, width=10)
 
-#buttons
+#tab1 main window buttons
 btn_file1 = Button(window, text="Import video", command=file1).grid(row=2, column=0, sticky="ew", padx=5)
 btn_100 = Button(window, text="Button_00", command=button_0).grid(row=3, column=0, sticky="ew", padx=5)
 btn_101 = Button(window, text="Button_01", command=button_1).grid(row=4, column=0, sticky="ew", padx=5)
@@ -562,8 +561,7 @@ btn_113 = Button(window, text="Button_13", command=button_5).grid(row=16, column
 btn_114 = Button(window, text="Button_14", command=button_5).grid(row=17, column=0, sticky="ew", padx=5)
 btn_stop = Button(window, text="Stop", command=stop).grid(row=23, column=0, sticky="ew", padx=5)
 
-
-#settings button
+#tab 1 main window settings button
 btn_set_100 = Button(window, text="+", command=lambda:settings_menu(0)).grid(row=3, column=3, sticky="ew", padx=5)
 btn_set_101 = Button(window, text="+", command=lambda:settings_menu(1)).grid(row=4, column=3, sticky="ew", padx=5)
 btn_set_102 = Button(window, text="+", command=lambda:settings_menu(2)).grid(row=5, column=3, sticky="ew", padx=5)
@@ -585,7 +583,7 @@ btn_add_camera = Button(window, text="Add Camera", command=add_camera).grid(row=
 btn_clear = Button(window, text="Clear", command=clear).grid(row=21, column=0, sticky="ew", padx=5) # tab 1 main window
 btn_exit = Button(window, text="Exit", command=exit).grid(row=24, column=0, sticky="ew", padx=5) #tab 1 main window
 
-#labels
+#tab 1 main window labels
 l1 = Label(window, text="Debugger1 Status:").grid(row=0, column=0, sticky="wne", padx=5) #tab 1 main window
 l100 = Label(window, text="00: ").grid(row=3, column=1, sticky="wn", padx=5)
 l101 = Label(window, text="01: ").grid(row=4, column=1, sticky="wn", padx=5)
@@ -603,8 +601,7 @@ l112 = Label(window, text="12: ").grid(row=15, column=1, sticky="wn", padx=5)
 l113 = Label(window, text="13: ").grid(row=16, column=1, sticky="wn", padx=5)
 l114 = Label(window, text="14: ").grid(row=17, column=1, sticky="wn", padx=5)
 
-
-#show entry box
+#show entry box tab 1 main window
 entry100.grid(row=3, column=2, sticky="wne", padx=5)
 entry101.grid(row=4, column=2, sticky="wne", padx=5)
 entry102.grid(row=5, column=2, sticky="wne", padx=5)
@@ -622,6 +619,6 @@ entry113.grid(row=16, column=2, sticky="wne", padx=5)
 entry114.grid(row=17, column=2, sticky="wne", padx=5)
 entry115.grid(row=18, column=2, sticky="wne", padx=5)
 
-#create window
+#create main window
 window_tabs.mainloop()
 

@@ -319,7 +319,7 @@ def communication_wizard(object):
         e_4_4 = Entry(tab_4, width=20)
         e_4_5 = Entry(tab_4, width=20)
 
-
+        #get all settings menu entries
         def get_entry(TAB_NUM):
                 global e100 # TCP
                 global e101 # TCP
@@ -349,7 +349,7 @@ def communication_wizard(object):
                 global e404 # wifi
                 global e405 # wifi
 
-                #get tab 1 TCP settings
+                #tab 1 get TCP settings
                 e100 = e_1_0.get()
                 e101 = e_1_1.get()
                 e102 = e_1_2.get()
@@ -371,7 +371,7 @@ def communication_wizard(object):
                 entry105.delete(0, END)
                 entry105.insert(END, e_1_5.get())
                 
-                #get tab 2 Serial/CAN Settings
+                #tab 2 get Serial/CAN Settings
                 e200 = e_2_0.get()
                 e201 = e_2_1.get()
                 e202 = e_2_2.get()
@@ -380,7 +380,7 @@ def communication_wizard(object):
                 e205 = e_2_5.get()
 
 
-                #get tab 3 Bluetooth settings
+                #tab 3 get Bluetooth settings
                 e300 = e_3_0.get()
                 e301 = e_3_1.get()
                 e302 = e_3_2.get()
@@ -388,7 +388,7 @@ def communication_wizard(object):
                 e304 = e_3_4.get()
                 e305 = e_3_5.get()
 
-                #get tab 4 Wifi settings
+                #tab 4 get Wifi settings
                 e400 = e_4_0.get()
                 e401 = e_4_1.get()
                 e402 = e_4_2.get()
@@ -542,7 +542,7 @@ entry113 = Entry(window, width=10)
 entry114 = Entry(window, width=10)
 entry115 = Entry(window, width=10)
 
-#tab1 main window buttons
+#tab 1 main window buttons
 btn_file1 = Button(window, text="Import video", command=file1).grid(row=2, column=0, sticky="ew", padx=5)
 btn_100 = Button(window, text="Button_00", command=button_0).grid(row=3, column=0, sticky="ew", padx=5)
 btn_101 = Button(window, text="Button_01", command=button_1).grid(row=4, column=0, sticky="ew", padx=5)
@@ -601,7 +601,7 @@ l112 = Label(window, text="12: ").grid(row=15, column=1, sticky="wn", padx=5)
 l113 = Label(window, text="13: ").grid(row=16, column=1, sticky="wn", padx=5)
 l114 = Label(window, text="14: ").grid(row=17, column=1, sticky="wn", padx=5)
 
-#show entry box tab 1 main window
+#tab 1 show main window entry box
 entry100.grid(row=3, column=2, sticky="wne", padx=5)
 entry101.grid(row=4, column=2, sticky="wne", padx=5)
 entry102.grid(row=5, column=2, sticky="wne", padx=5)

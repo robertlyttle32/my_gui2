@@ -221,13 +221,13 @@ def stop():
 	print(stop)
 	
 def exit():
-	global stop
-	stop = True
-	entry100.delete(0, END)
-	entry102.delete(0, END)
-	entry103.delete(0, END)
-	print(stop)
-	window.destroy()
+        global stop
+        stop = True
+        entry100.delete(0, END)
+        entry102.delete(0, END)
+        entry103.delete(0, END)
+        print(stop)
+        window.destroy()
 	
 #settings menu main tab
 def communication_wizard(object):
@@ -319,7 +319,7 @@ def communication_wizard(object):
         e_4_4 = Entry(tab_4, width=20)
         e_4_5 = Entry(tab_4, width=20)
 
-        #get all settings menu entries
+        #get TCP, Serial/CAN, Bluetooth, and Wifi settings menu entries
         def get_entry(TAB_NUM):
                 global e100 # TCP
                 global e101 # TCP
@@ -378,7 +378,6 @@ def communication_wizard(object):
                 e203 = e_2_3.get()
                 e204 = e_2_4.get()
                 e205 = e_2_5.get()
-
 
                 #tab 3 get Bluetooth settings
                 e300 = e_3_0.get()

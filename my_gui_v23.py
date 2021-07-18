@@ -754,24 +754,24 @@ def troubleshoot_wizard():
         channel2_select = "2"
         channel3_select = "3"
         channel4_select = "4"
-        c_label1 = Label(control_1, text="Channel: {}".format(channel1_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        c_label2 = Label(control_2, text="Channel: {}".format(channel2_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        c_label3 = Label(control_3, text="Channel: {}".format(channel3_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        c_label4 = Label(control_4, text="Channel: {}".format(channel4_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        ctrl_label_1_1 = Label(control_1, text="Channel: {}".format(channel1_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        ctrl_label_1_2 = Label(control_2, text="Channel: {}".format(channel2_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        ctrl_label_1_3 = Label(control_3, text="Channel: {}".format(channel3_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        ctrl__label_1_4 = Label(control_4, text="Channel: {}".format(channel4_select)).grid(row=0, column=0, sticky="wn", padx=5)
 
         #control tab 1 buttons
-        btn_1_c1 = Button(control_1, text="Up", command=count_up).grid(row=9, column=1, sticky="wne", pady=5)
-        btn_1_c2 = Button(control_1, text="Down", command=count_down).grid(row=10, column=1, sticky="wne", pady=5)
-        btn_1_c3 = Button(control_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
-        btn_1_c4 = Button(control_1, text="Setting_4").grid(row=12, column=1, sticky="wne")
-        btn_1_c5 = Button(control_1, text="Left").grid(row=9, column=2, sticky="wne", padx=5, pady=5)
-        btn_1_c6 = Button(control_1, text="Right").grid(row=9, column=3, sticky="wne", padx=5, pady=5)
+        ctrl_1_btn_1 = Button(control_1, text="Up", command=count_up).grid(row=9, column=1, sticky="wne", pady=5)
+        ctrl_1_btn_2 = Button(control_1, text="Down", command=count_down).grid(row=10, column=1, sticky="wne", pady=5)
+        ctrl_1_btn_3 = Button(control_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
+        ctrl_1_btn_4 = Button(control_1, text="Setting_4").grid(row=12, column=1, sticky="wne")
+        ctrl_1_btn_5 = Button(control_1, text="Left").grid(row=9, column=2, sticky="wne", padx=5, pady=5)
+        ctrl_1_btn_6 = Button(control_1, text="Right").grid(row=9, column=3, sticky="wne", padx=5, pady=5)
 
         #control tab 2 buttons
-        btn_2_c1 = Button(control_2, text="+", command=count_up).grid(row=9, column=1, sticky="wne")
-        btn_2_c2 = Button(control_2, text="-", command=count_down).grid(row=10, column=1, sticky="wne")
-        btn_2_c3 = Button(control_2, text="Setting_3").grid(row=11, column=1, sticky="wne")
-        btn_2_c4 = Button(control_2, text="Setting_4").grid(row=12, column=1, sticky="wne")
+        ctrl_2_btn_1 = Button(control_2, text="+", command=count_up).grid(row=9, column=1, sticky="wne")
+        ctrl_2_btn_2 = Button(control_2, text="-", command=count_down).grid(row=10, column=1, sticky="wne")
+        ctrl_2_btn_3 = Button(control_2, text="Setting_3").grid(row=11, column=1, sticky="wne")
+        ctrl_2_btn_4 = Button(control_2, text="Setting_4").grid(row=12, column=1, sticky="wne")
         def kill_set():
                 troubleshooter.destroy()
 
@@ -781,12 +781,12 @@ def troubleshoot_wizard():
                 troubleshooter.destroy()
 
         #control tab 1 buttons
-        btn_1_c5 = Button(control_1, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
-        btn_2_c6 = Button(control_1, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+        ctrl_1_btn_5 = Button(control_1, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
+        ctrl_1_btn_6 = Button(control_1, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #control tab 2 buttons
-        btn_2_c5 = Button(control_2, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
-        btn_2_c6 = Button(control_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+        ctrl_5_btn_5 = Button(control_2, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
+        ctrl_btn_6 = Button(control_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #control tab 1 entry boxes on screen
         ctrl_1_0.grid(row=3, column=1, sticky="wne")

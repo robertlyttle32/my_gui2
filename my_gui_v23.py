@@ -854,7 +854,7 @@ mw_1_btn_17_0 = Button(window, text="Button_14", command=button_5).grid(row=17, 
 mw_1_btn_stop_23_0 = Button(window, text="Stop", command=stop).grid(row=23, column=0, sticky="ew", padx=5)
 
 #tab 2 main window buttons
-mw_2_btn_5 = Button(window_1, text="Troubleshooter", command=troubleshoot_wizard).grid(row=5, column=0, sticky="ew", padx=5)
+mw_2_btn_5_0 = Button(window_1, text="Troubleshooter", command=troubleshoot_wizard).grid(row=5, column=0, sticky="ew", padx=5)
 
 #tab 1 main window settings button
 mw_1_btn_3_3 = Button(window, text="+", command=lambda:settings_menu(0)).grid(row=3, column=3, sticky="ew", padx=5)

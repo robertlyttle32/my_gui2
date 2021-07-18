@@ -24,6 +24,7 @@ from tkinter import messagebox
 from tkcalendar import Calendar
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 import threading
+import tcp_listen
 
 cv2 = 0
 var = 0
@@ -420,6 +421,12 @@ def communication_wizard(object):
                 print("COM4_4: ", comm_4_output_4)
                 print("COM4_5: ", comm_4_output_5)
                 print("COM4_6: ", comm_4_output_6)
+                TCP_IP = "192.168.1.221"
+                TCP_PORT = 22
+                def tcp_init():
+                        tcp_listen.tcp(TCP_IP, TCP_PORT)
+                thread_tcp_listen = threading.Thread(target=tcp_init)
+                thread_tcp_listen.start()
 
         #tab 1, 2, 3, and 4 settings window menu labels
         comm_1_label_1_0 = Label(comm_tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)

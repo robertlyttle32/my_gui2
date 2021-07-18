@@ -1,5 +1,13 @@
 #Date: 6/20/2021
 #Author: Robert Lyttle
+#variable naming convension (window_name_{window number}_widget ID: (Button or Entry)_{row position}).format(a, b)
+#for example:
+#comm_1_label_0_0 = Label(comm_tab_1, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
+#
+#window_number: 1
+#window_name: comm
+#screen position: row = 0
+#screen position: column: 0
 
 ##import libraries
 import numpy as np

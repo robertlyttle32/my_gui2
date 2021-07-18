@@ -219,7 +219,7 @@ def stop():
 	entry108.delete(0, END)
 	entry109.delete(0, END)
 	print(stop)
-	
+
 def exit():
         global stop
         stop = True
@@ -228,7 +228,7 @@ def exit():
         entry103.delete(0, END)
         print(stop)
         window.destroy()
-	
+
 #settings menu main tab
 def communication_wizard(object):
         Tabs = Tk()
@@ -534,10 +534,10 @@ tabControl.add(window, text ='Sensor')
 tabControl.add(window_1, text ='Diagnostics')
 tabControl.pack(expand = 1, fill ="both")
 
-
+#troubleshooter wizard allows for live interaction with your code
 def troubleshoot_wizard():
         troubleshooter = Tk()
-        troubleshooter.geometry("400x400")
+        troubleshooter.geometry("600x600")
         troubleshooter.title("Troubleshoot Wizard")
         tabControl = ttk.Notebook(troubleshooter)
 
@@ -554,7 +554,7 @@ def troubleshoot_wizard():
 
         #control 1 menu label
         tabControl = ttk.Notebook(control_1)
-        cl1 = Label(control_1, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
+        cl1 = Label(control_1, text="Input Control").grid(row=2, column=0, sticky="wn", padx=5)
         cl1 = Label(control_1, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
         cl2 = Label(control_1, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
         cl3 = Label(control_1, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
@@ -679,6 +679,7 @@ def troubleshoot_wizard():
                 entry104.insert(END, c_1_4.get())
                 entry105.delete(0, END)
                 entry105.insert(END, c_1_5.get())
+                entry105.insert(END, count)
                 
                 #tab 2 get Serial/CAN Settings
                 c200 = c_2_0.get()
@@ -719,12 +720,35 @@ def troubleshoot_wizard():
                 entry114.insert(END, c_2_0.get())
 
                 print("Tab_NUMBER: ", TAB_NUM)
-                print("E0: ", c100)
-                print("E1: ", c101)
-                print("E2: ", c102)
-                print("E3: ", c103)
-                print("E4: ", c104)
-                print("E5: ", c105)
+                print("C0: ", c100)
+                print("C1: ", c101)
+                print("C2: ", c102)
+                print("C3: ", c103)
+                print("C4: ", c104)
+                print("C5: ", c105)
+
+        #up counter
+        output = 0
+        def count_up():
+                count = 0
+                global output
+                count = count + 1
+                output = count
+                c_1_0.delete(0, END)
+                c_1_0.insert(END, count)
+
+        #down counter
+        def count_down():
+                count = 0
+                global out_put
+                count = count - 1
+                output = count
+                c_1_0.delete(0, END)
+                c_1_0.insert(END, count)
+
+
+        #c_1_0.delete(0, END)
+        #c_1_0.insert(END, output)
 
         #control tab 1, 2, 3, and 4 main window channel label
         channel1_select = "1"
@@ -737,14 +761,16 @@ def troubleshoot_wizard():
         c_label4 = Label(control_4, text="Channel: {}".format(channel4_select)).grid(row=0, column=0, sticky="wn", padx=5)
 
         #control tab 1 buttons
-        btn_1_c1 = Button(control_1, text="+").grid(row=9, column=1, sticky="wne")
-        btn_1_c2 = Button(control_1, text="-").grid(row=10, column=1, sticky="wne")
+        btn_1_c1 = Button(control_1, text="Up", command=count_up).grid(row=9, column=1, sticky="wne", pady=5)
+        btn_1_c2 = Button(control_1, text="Down", command=count_down).grid(row=10, column=1, sticky="wne", pady=5)
         btn_1_c3 = Button(control_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
         btn_1_c4 = Button(control_1, text="Setting_4").grid(row=12, column=1, sticky="wne")
+        btn_1_c5 = Button(control_1, text="Left").grid(row=9, column=2, sticky="wne", padx=5, pady=5)
+        btn_1_c6 = Button(control_1, text="Right").grid(row=9, column=3, sticky="wne", padx=5, pady=5)
 
         #control tab 2 buttons
-        btn_2_c1 = Button(control_2, text="+").grid(row=9, column=1, sticky="wne")
-        btn_2_c2 = Button(control_2, text="-").grid(row=10, column=1, sticky="wne")
+        btn_2_c1 = Button(control_2, text="+", command=count_up).grid(row=9, column=1, sticky="wne")
+        btn_2_c2 = Button(control_2, text="-", command=count_down).grid(row=10, column=1, sticky="wne")
         btn_2_c3 = Button(control_2, text="Setting_3").grid(row=11, column=1, sticky="wne")
         btn_2_c4 = Button(control_2, text="Setting_4").grid(row=12, column=1, sticky="wne")
         def kill_set():

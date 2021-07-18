@@ -19,20 +19,20 @@ import threading
 
 cv2 = 0
 var = 0
-banner_speed = 0
+BANNER_SPEED = 0
 BANNER = 0
 RED = 255  # 0 - 255
 BLUE = 255 # 0 - 255
 GREEN = 255 # 0 - 255
 x,y,w,h = 0,640,560,100
-width = 1280
-height = 720
+WIDTH = 1280
+HEIGHT = 720
 button1 = False
 button5 = False
-forward = False
-back = False
+FORWARD = False
+BACK = False
 button2 = False
-count = 0
+COUNT = 0
 
 #get files
 class Debugger1:
@@ -50,7 +50,7 @@ class Debugger1:
         def command_1():
                 global count 
                 while True:
-                        count = count + 1
+                        COUNT = COUNT + 1
                         time.sleep(1)
 
         def command_2():
@@ -84,7 +84,7 @@ class Debugger1:
                 entry101.delete(0, END)
                 entry101.insert(END, BANNER[3])
                 entry102.delete(0, END)
-                entry102.insert(END, banner_speed)
+                entry102.insert(END, BANNER_SPEED)
                 entry103.delete(0, END)
                 entry103.insert(END, BANNER[5])
                 entry104.delete(0, END)
@@ -163,16 +163,16 @@ def button_2():
         print(button2)
 
 def button_3():
-        global back
-        back = not back
-        print('Back: ', back)
+        global BACK
+        BACK = not BACK
+        print('Back: ', BACK)
         entry102.delete(0, END)
-        entry102.insert(END, back)
+        entry102.insert(END, BACK)
         
 def button_4():
-	global forward
-	forward = not forward
-	print('Forward: ', forward)
+	global FORWARD
+	FORWARD = not FORWARD
+	print('Forward: ', FORWARD)
 	
 def button_5():
         print("Button 5")
@@ -236,204 +236,204 @@ def communication_wizard(object):
         Tabs.title("Connection Wizard")
         tabControl = ttk.Notebook(Tabs)
 
-        tab_1 = ttk.Frame(tabControl)
-        tab_2 = ttk.Frame(tabControl)
-        tab_3 = ttk.Frame(tabControl)
-        tab_4 = ttk.Frame(tabControl)
+        comm_tab_1 = ttk.Frame(tabControl)
+        comm_tab_2 = ttk.Frame(tabControl)
+        comm_tab_3 = ttk.Frame(tabControl)
+        comm_tab_4 = ttk.Frame(tabControl)
 
-        tabControl.add(tab_1, text ='TCP')
-        tabControl.add(tab_2, text ='Serial')
-        tabControl.add(tab_3, text ='Bluetooth')
-        tabControl.add(tab_4, text ='Wifi')
+        tabControl.add(comm_tab_1, text ='TCP')
+        tabControl.add(comm_tab_2, text ='Serial')
+        tabControl.add(comm_tab_3, text ='Bluetooth')
+        tabControl.add(comm_tab_4, text ='Wifi')
         tabControl.pack(expand = 8, fill ="both")
 
         #tab 1 TCP settings menu label
-        tabControl = ttk.Notebook(tab_1)
-        l1 = Label(tab_1, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
-        l1 = Label(tab_1, text="IP address: ").grid(row=3, column=0, sticky="wn", padx=5)
-        l2 = Label(tab_1, text="Subnet mask: ").grid(row=4, column=0, sticky="wn", padx=5)
-        l3 = Label(tab_1, text="Default gateway: ").grid(row=5, column=0, sticky="wn", padx=5)
-        l4 = Label(tab_1, text="Prefered DNS server: ").grid(row=6, column=0, sticky="wn", padx=5)
-        l5 = Label(tab_1, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
-        l6 = Label(tab_1, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        tabControl = ttk.Notebook(comm_tab_1)
+        comm_l1 = Label(comm_tab_1, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
+        comm_l1 = Label(comm_tab_1, text="IP address: ").grid(row=3, column=0, sticky="wn", padx=5)
+        comm_l2 = Label(comm_tab_1, text="Subnet mask: ").grid(row=4, column=0, sticky="wn", padx=5)
+        comm_l3 = Label(comm_tab_1, text="Default gateway: ").grid(row=5, column=0, sticky="wn", padx=5)
+        comm_l4 = Label(comm_tab_1, text="Prefered DNS server: ").grid(row=6, column=0, sticky="wn", padx=5)
+        comm_l5 = Label(comm_tab_1, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
+        comm_l6 = Label(comm_tab_1, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
         #tab 2 Serial/CAN settings menu label
-        tabControl = ttk.Notebook(tab_2)
-        l1 = Label(tab_2, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
-        l1 = Label(tab_2, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
-        l2 = Label(tab_2, text="Speed (baud): ").grid(row=4, column=0, sticky="wn", padx=5)
-        l3 = Label(tab_2, text="Data bits: ").grid(row=5, column=0, sticky="wn", padx=5)
-        l4 = Label(tab_2, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
-        l5 = Label(tab_2, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
-        l6 = Label(tab_2, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        tabControl = ttk.Notebook(comm_tab_2)
+        comm_l1 = Label(comm_tab_2, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
+        comm_l1 = Label(comm_tab_2, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
+        comm_l2 = Label(comm_tab_2, text="Speed (baud): ").grid(row=4, column=0, sticky="wn", padx=5)
+        comm_l3 = Label(comm_tab_2, text="Data bits: ").grid(row=5, column=0, sticky="wn", padx=5)
+        comm_l4 = Label(comm_tab_2, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
+        comm_l5 = Label(comm_tab_2, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
+        comm_l6 = Label(comm_tab_2, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
         #tab 3 Bluetooth settings menu label
-        tabControl = ttk.Notebook(tab_3)
-        l1 = Label(tab_3, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
-        l1 = Label(tab_3, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
-        l2 = Label(tab_3, text="Speed (baud): ").grid(row=4, column=0, sticky="wn", padx=5)
-        l3 = Label(tab_3, text="Data bits: ").grid(row=5, column=0, sticky="wn", padx=5)
-        l4 = Label(tab_3, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
-        l5 = Label(tab_3, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
-        l6 = Label(tab_3, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        tabControl = ttk.Notebook(comm_tab_3)
+        comm_l1 = Label(comm_tab_3, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
+        comm_l1 = Label(comm_tab_3, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
+        comm_l2 = Label(comm_tab_3, text="Speed (baud): ").grid(row=4, column=0, sticky="wn", padx=5)
+        comm_l3 = Label(comm_tab_3, text="Data bits: ").grid(row=5, column=0, sticky="wn", padx=5)
+        comm_l4 = Label(comm_tab_3, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
+        comm_l5 = Label(comm_tab_3, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
+        comm_l6 = Label(comm_tab_3, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
         #tab 3 Wifi settings menu label
-        tabControl = ttk.Notebook(tab_4)
-        l1 = Label(tab_4, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
-        l1 = Label(tab_4, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
-        l2 = Label(tab_4, text="Speed (baud): ").grid(row=4, column=0, sticky="wn", padx=5)
-        l3 = Label(tab_4, text="Data bits: ").grid(row=5, column=0, sticky="wn", padx=5)
-        l4 = Label(tab_4, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
-        l5 = Label(tab_4, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
-        l6 = Label(tab_4, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        tabControl = ttk.Notebook(comm_tab_4)
+        comm_l1 = Label(comm_tab_4, text="Settings ").grid(row=0, column=0, sticky="wn", padx=5)
+        comm_l1 = Label(comm_tab_4, text="COM: ").grid(row=3, column=0, sticky="wn", padx=5)
+        comm_l2 = Label(comm_tab_4, text="Speed (baud): ").grid(row=4, column=0, sticky="wn", padx=5)
+        comm_l3 = Label(comm_tab_4, text="Data bits: ").grid(row=5, column=0, sticky="wn", padx=5)
+        comm_l4 = Label(comm_tab_4, text="Stop bit: ").grid(row=6, column=0, sticky="wn", padx=5)
+        comm_l5 = Label(comm_tab_4, text="Port: ").grid(row=7, column=0, sticky="wn", padx=5)
+        comm_l6 = Label(comm_tab_4, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
         
         #tab 1 TCP settings menu entry box
-        e_1_0 = Entry(tab_1, width=20)
-        e_1_1 = Entry(tab_1, width=20)
-        e_1_2 = Entry(tab_1, width=20)
-        e_1_3 = Entry(tab_1, width=20)
-        e_1_4 = Entry(tab_1, width=20)
-        e_1_5 = Entry(tab_1, width=20)
+        comm_1_0 = Entry(comm_tab_1, width=20)
+        comm_1_1 = Entry(comm_tab_1, width=20)
+        comm_1_2 = Entry(comm_tab_1, width=20)
+        comm_1_3 = Entry(comm_tab_1, width=20)
+        comm_1_4 = Entry(comm_tab_1, width=20)
+        comm_1_5 = Entry(comm_tab_1, width=20)
 
         #tab 2 Serial/CAN settings menu entry box
-        e_2_0 = Entry(tab_2, width=20)
-        e_2_1 = Entry(tab_2, width=20)
-        e_2_2 = Entry(tab_2, width=20)
-        e_2_3 = Entry(tab_2, width=20)
-        e_2_4 = Entry(tab_2, width=20)
-        e_2_5 = Entry(tab_2, width=20)
+        comm_2_0 = Entry(comm_tab_2, width=20)
+        comm_2_1 = Entry(comm_tab_2, width=20)
+        comm_2_2 = Entry(comm_tab_2, width=20)
+        comm_2_3 = Entry(comm_tab_2, width=20)
+        comm_2_4 = Entry(comm_tab_2, width=20)
+        comm_2_5 = Entry(comm_tab_2, width=20)
 
         #tab 3 Buetooth settings menu entry box
-        e_3_0 = Entry(tab_3, width=20)
-        e_3_1 = Entry(tab_3, width=20)
-        e_3_2 = Entry(tab_3, width=20)
-        e_3_3 = Entry(tab_3, width=20)
-        e_3_4 = Entry(tab_3, width=20)
-        e_3_5 = Entry(tab_3, width=20)
+        comm_3_0 = Entry(comm_tab_3, width=20)
+        comm_3_1 = Entry(comm_tab_3, width=20)
+        comm_3_2 = Entry(comm_tab_3, width=20)
+        comm_3_3 = Entry(comm_tab_3, width=20)
+        comm_3_4 = Entry(comm_tab_3, width=20)
+        comm_3_5 = Entry(comm_tab_3, width=20)
 
         #tab 3 Wifi settings menu entry box
-        e_4_0 = Entry(tab_4, width=20)
-        e_4_1 = Entry(tab_4, width=20)
-        e_4_2 = Entry(tab_4, width=20)
-        e_4_3 = Entry(tab_4, width=20)
-        e_4_4 = Entry(tab_4, width=20)
-        e_4_5 = Entry(tab_4, width=20)
+        comm_4_0 = Entry(comm_tab_4, width=20)
+        comm_4_1 = Entry(comm_tab_4, width=20)
+        comm_4_2 = Entry(comm_tab_4, width=20)
+        comm_4_3 = Entry(comm_tab_4, width=20)
+        comm_4_4 = Entry(comm_tab_4, width=20)
+        comm_4_5 = Entry(comm_tab_4, width=20)
 
         #get TCP, Serial/CAN, Bluetooth, and Wifi settings menu entries
         def get_entry(TAB_NUM):
-                global e100 # TCP
-                global e101 # TCP
-                global e102 # TCP
-                global e103 # TCP
-                global e104 # TCP
-                global e105 # TCP
+                global comm_100 # TCP
+                global comm_101 # TCP
+                global comm_102 # TCP
+                global comm_103 # TCP
+                global comm_104 # TCP
+                global comm_105 # TCP
 
-                global e200 # Serial/CAN
-                global e201 # Serial/CAN
-                global e202 # Serial/CAN
-                global e203 # Serial/CAN
-                global e204 # Serial/CAN
-                global e205 # Serial/CAN
+                global comm_200 # Serial/CAN
+                global comm_201 # Serial/CAN
+                global comm_202 # Serial/CAN
+                global comm_203 # Serial/CAN
+                global comm_204 # Serial/CAN
+                global comm_205 # Serial/CAN
 
-                global e300 # Bluetooth
-                global e301 # Bluetooth
-                global e302 # Bluetooth
-                global e303 # Bluetooth
-                global e304 # Bluetooth
-                global e305 # Bluetooth
+                global comm_300 # Bluetooth
+                global comm_301 # Bluetooth
+                global comm_302 # Bluetooth
+                global comm_303 # Bluetooth
+                global comm_304 # Bluetooth
+                global comm_305 # Bluetooth
 
-                global e400 # Wifi
-                global e401 # Wifi
-                global e402 # Wifi
-                global e403 # wifi
-                global e404 # wifi
-                global e405 # wifi
+                global comm_400 # Wifi
+                global comm_401 # Wifi
+                global comm_402 # Wifi
+                global comm_403 # wifi
+                global comm_404 # wifi
+                global comm_405 # wifi
 
                 #tab 1 get TCP settings
-                e100 = e_1_0.get()
-                e101 = e_1_1.get()
-                e102 = e_1_2.get()
-                e103 = e_1_3.get()
-                e104 = e_1_4.get()
-                e105 = e_1_5.get()
+                comm_100 = comm_1_0.get()
+                comm_101 = comm_1_1.get()
+                comm_102 = comm_1_2.get()
+                comm_103 = comm_1_3.get()
+                comm_104 = comm_1_4.get()
+                comm_105 = comm_1_5.get()
 
                 #test - getting values from TCP settings entry boxes and display them into entry boxes below:
                 entry100.delete(0, END)
-                entry100.insert(END, e_1_0.get())
+                entry100.insert(END, comm_1_0.get())
                 entry101.delete(0, END)
-                entry101.insert(END, e_1_1.get())
+                entry101.insert(END, comm_1_1.get())
                 entry102.delete(0, END)
-                entry102.insert(END, e_1_2.get())
+                entry102.insert(END, comm_1_2.get())
                 entry103.delete(0, END)
-                entry103.insert(END, e_1_3.get())
+                entry103.insert(END, comm_1_3.get())
                 entry104.delete(0, END)
-                entry104.insert(END, e_1_4.get())
+                entry104.insert(END, comm_1_4.get())
                 entry105.delete(0, END)
-                entry105.insert(END, e_1_5.get())
+                entry105.insert(END, comm_1_5.get())
                 
                 #tab 2 get Serial/CAN Settings
-                e200 = e_2_0.get()
-                e201 = e_2_1.get()
-                e202 = e_2_2.get()
-                e203 = e_2_3.get()
-                e204 = e_2_4.get()
-                e205 = e_2_5.get()
+                comm_200 = comm_2_0.get()
+                comm_201 = comm_2_1.get()
+                comm_202 = comm_2_2.get()
+                comm_203 = comm_2_3.get()
+                comm_204 = comm_2_4.get()
+                comm_205 = comm_2_5.get()
 
                 #tab 3 get Bluetooth settings
-                e300 = e_3_0.get()
-                e301 = e_3_1.get()
-                e302 = e_3_2.get()
-                e303 = e_3_3.get()
-                e304 = e_3_4.get()
-                e305 = e_3_5.get()
+                comm_300 = comm_3_0.get()
+                comm_301 = comm_3_1.get()
+                comm_302 = comm_3_2.get()
+                comm_303 = comm_3_3.get()
+                comm_304 = comm_3_4.get()
+                comm_305 = comm_3_5.get()
 
                 #tab 4 get Wifi settings
-                e400 = e_4_0.get()
-                e401 = e_4_1.get()
-                e402 = e_4_2.get()
-                e403 = e_4_3.get()
-                e404 = e_4_4.get()
-                e405 = e_4_5.get()
+                comm_400 = comm_4_0.get()
+                comm_401 = comm_4_1.get()
+                comm_402 = comm_4_2.get()
+                comm_403 = comm_4_3.get()
+                comm_404 = comm_4_4.get()
+                comm_405 = comm_4_5.get()
 
                 #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
                 entry107.delete(0, END)
-                entry107.insert(END, e_2_0.get())
+                entry107.insert(END, comm_2_0.get())
                 entry108.delete(0, END)
-                entry108.insert(END, e_2_1.get())
+                entry108.insert(END, comm_2_1.get())
                 entry109.delete(0, END)
-                entry109.insert(END, e_2_2.get())
+                entry109.insert(END, comm_2_2.get())
                 entry110.delete(0, END)
-                entry110.insert(END, e_2_3.get())
+                entry110.insert(END, comm_2_3.get())
                 entry111.delete(0, END)
-                entry112.insert(END, e_2_4.get())
+                entry112.insert(END, comm_2_4.get())
                 entry113.delete(0, END)
-                entry114.insert(END, e_2_0.get())
+                entry114.insert(END, comm_2_0.get())
 
                 print("Tab_NUMBER: ", TAB_NUM)
-                print("E0: ", e100)
-                print("E1: ", e101)
-                print("E2: ", e102)
-                print("E3: ", e103)
-                print("E4: ", e104)
-                print("E5: ", e105)
+                print("E0: ", comm_100)
+                print("E1: ", comm_101)
+                print("E2: ", comm_102)
+                print("E3: ", comm_103)
+                print("E4: ", comm_104)
+                print("E5: ", comm_105)
 
         #tab 1, 2, 3, and 4 settings window menu labels
-        e_label1 = Label(tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        e_label2 = Label(tab_2, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        e_label3 = Label(tab_3, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        e_label4 = Label(tab_4, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        e_label1 = Label(comm_tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        e_label2 = Label(comm_tab_2, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        e_label3 = Label(comm_tab_3, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        e_label4 = Label(comm_tab_4, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
 
         #tab 1 settings menu buttons
-        Button(tab_1, text="+").grid(row=9, column=1, sticky="wne")
-        Button(tab_1, text="-").grid(row=10, column=1, sticky="wne")
-        Button(tab_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
-        Button(tab_1, text="Setting_4").grid(row=12, column=1, sticky="wne")
+        Button(comm_tab_1, text="+").grid(row=9, column=1, sticky="wne")
+        Button(comm_tab_1, text="-").grid(row=10, column=1, sticky="wne")
+        Button(comm_tab_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
+        Button(comm_tab_1, text="Setting_4").grid(row=12, column=1, sticky="wne")
 
         #tab 2 settings menu buttons
-        Button(tab_2, text="+").grid(row=9, column=1, sticky="wne")
-        Button(tab_2, text="-").grid(row=10, column=1, sticky="wne")
-        Button(tab_2, text="Setting_3").grid(row=11, column=1, sticky="wne")
-        Button(tab_2, text="Setting_4").grid(row=12, column=1, sticky="wne")
+        Button(comm_tab_2, text="+").grid(row=9, column=1, sticky="wne")
+        Button(comm_tab_2, text="-").grid(row=10, column=1, sticky="wne")
+        Button(comm_tab_2, text="Setting_3").grid(row=11, column=1, sticky="wne")
+        Button(comm_tab_2, text="Setting_4").grid(row=12, column=1, sticky="wne")
         def kill_set():
                 Tabs.destroy()
 
@@ -444,28 +444,28 @@ def communication_wizard(object):
                 Tabs.destroy()
 
         #tab 1 settings menu buttons
-        Button(tab_1, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
-        Button(tab_1, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+        Button(comm_tab_1, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
+        Button(comm_tab_1, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #tab 2 settings menu buttons
-        Button(tab_2, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
-        Button(tab_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+        Button(comm_tab_2, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
+        Button(comm_tab_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #tab 1 settings menu window show entry boxes on screen
-        e_1_0.grid(row=3, column=1, sticky="wne")
-        e_1_1.grid(row=4, column=1, sticky="wne")
-        e_1_2.grid(row=5, column=1, sticky="wne")
-        e_1_3.grid(row=6, column=1, sticky="wne")
-        e_1_4.grid(row=7, column=1, sticky="wne")
-        e_2_5.grid(row=8, column=1, sticky="wne")
+        comm_1_0.grid(row=3, column=1, sticky="wne")
+        comm_1_1.grid(row=4, column=1, sticky="wne")
+        comm_1_2.grid(row=5, column=1, sticky="wne")
+        comm_1_3.grid(row=6, column=1, sticky="wne")
+        comm_1_4.grid(row=7, column=1, sticky="wne")
+        comm_2_5.grid(row=8, column=1, sticky="wne")
 
         #tab 2 settings menu window show entry boxes on screen
-        e_2_0.grid(row=3, column=1, sticky="wne")
-        e_2_1.grid(row=4, column=1, sticky="wne")
-        e_2_2.grid(row=5, column=1, sticky="wne")
-        e_2_3.grid(row=6, column=1, sticky="wne")
-        e_2_4.grid(row=7, column=1, sticky="wne")
-        e_2_5.grid(row=8, column=1, sticky="wne")
+        comm_2_0.grid(row=3, column=1, sticky="wne")
+        comm_2_1.grid(row=4, column=1, sticky="wne")
+        comm_2_2.grid(row=5, column=1, sticky="wne")
+        comm_2_3.grid(row=6, column=1, sticky="wne")
+        comm_2_4.grid(row=7, column=1, sticky="wne")
+        comm_2_5.grid(row=8, column=1, sticky="wne")
         Tabs.mainloop()
 
 #call settings funtions here
@@ -554,197 +554,196 @@ def troubleshoot_wizard():
 
         #control 1 menu label
         tabControl = ttk.Notebook(control_1)
-        cl1 = Label(control_1, text="Input Control").grid(row=2, column=0, sticky="wn", padx=5)
-        cl1 = Label(control_1, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
-        cl2 = Label(control_1, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
-        cl3 = Label(control_1, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
-        cl4 = Label(control_1, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
-        cl5 = Label(control_1, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
-        cl6 = Label(control_1, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        ctrl_l_1_1 = Label(control_1, text="Input Control").grid(row=2, column=0, sticky="wn", padx=5)
+        ctrl_l_1_2 = Label(control_1, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
+        ctrl_l_1_3 = Label(control_1, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
+        ctrl_l_1_4 = Label(control_1, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
+        ctrl_l_1_5 = Label(control_1, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
+        ctrl_l_1_6 = Label(control_1, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
+        ctrl_l_1_7 = Label(control_1, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
         #control 2 menu label
         tabControl = ttk.Notebook(control_2)
-        cl1 = Label(control_2, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
-        cl1 = Label(control_2, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
-        cl2 = Label(control_2, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
-        cl3 = Label(control_2, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
-        cl4 = Label(control_2, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
-        cl5 = Label(control_2, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
-        cl6 = Label(control_2, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        ctrl_l_2_1 = Label(control_2, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
+        ctrl_l_2_2 = Label(control_2, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
+        ctrl_l_2_3 = Label(control_2, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
+        ctrl_l_2_4 = Label(control_2, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
+        ctrl_l_2_5 = Label(control_2, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
+        ctrl_l_2_6 = Label(control_2, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
+        ctrl_l_2_7 = Label(control_2, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
         #control 3 menu label
         tabControl = ttk.Notebook(control_3)
-        cl1 = Label(control_3, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
-        cl1 = Label(control_3, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
-        cl2 = Label(control_3, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
-        cl3 = Label(control_3, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
-        cl4 = Label(control_3, text="Value_3 ").grid(row=6, column=0, sticky="wn", padx=5)
-        cl5 = Label(control_3, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
-        cl6 = Label(control_3, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        ctrl_l_3_1 = Label(control_3, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
+        ctrl_l_3_2 = Label(control_3, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
+        ctrl_l_3_3 = Label(control_3, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
+        ctrl_l_3_4 = Label(control_3, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
+        cntrl_l_3_5 = Label(control_3, text="Value_3 ").grid(row=6, column=0, sticky="wn", padx=5)
+        ctrl_l_3_6 = Label(control_3, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
+        ctrl_l_3_7 = Label(control_3, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
 
         #control 4 menu label
         tabControl = ttk.Notebook(control_4)
-        cl1 = Label(control_4, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
-        cl1 = Label(control_4, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
-        cl2 = Label(control_4, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
-        cl3 = Label(control_4, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
-        cl4 = Label(control_4, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
-        cl5 = Label(control_4, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
-        cl6 = Label(control_4, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
+        ctrl_l_4_1 = Label(control_4, text="Control Setting ").grid(row=2, column=0, sticky="wn", padx=5)
+        ctrl_l_4_2 = Label(control_4, text="Value_0: ").grid(row=3, column=0, sticky="wn", padx=5)
+        ctrl_l_4_3 = Label(control_4, text="Value_1: ").grid(row=4, column=0, sticky="wn", padx=5)
+        ctrl_l_4_4 = Label(control_4, text="Value_2: ").grid(row=5, column=0, sticky="wn", padx=5)
+        ctrl_l_4_5 = Label(control_4, text="Value_3: ").grid(row=6, column=0, sticky="wn", padx=5)
+        ctrl_l_4_6 = Label(control_4, text="Value_4: ").grid(row=7, column=0, sticky="wn", padx=5)
+        ctrl_l_4_7 = Label(control_4, text="N/A: ").grid(row=8, column=0, sticky="wn", padx=5)
         
         #control tab 1 entry box
-        c_1_0 = Entry(control_1, width=20)
-        c_1_1 = Entry(control_1, width=20)
-        c_1_2 = Entry(control_1, width=20)
-        c_1_3 = Entry(control_1, width=20)
-        c_1_4 = Entry(control_1, width=20)
-        c_1_5 = Entry(control_1, width=20)
+        ctrl_1_0 = Entry(control_1, width=20)
+        ctrl_1_1 = Entry(control_1, width=20)
+        ctrl_1_2 = Entry(control_1, width=20)
+        ctrl_1_3 = Entry(control_1, width=20)
+        ctrl_1_4 = Entry(control_1, width=20)
+        ctrl_1_5 = Entry(control_1, width=20)
 
         #control tab 2 entry box
-        c_2_0 = Entry(control_2, width=20)
-        c_2_1 = Entry(control_2, width=20)
-        c_2_2 = Entry(control_2, width=20)
-        c_2_3 = Entry(control_2, width=20)
-        c_2_4 = Entry(control_2, width=20)
-        c_2_5 = Entry(control_2, width=20)
+        ctrl_2_0 = Entry(control_2, width=20)
+        ctrl_2_1 = Entry(control_2, width=20)
+        ctrl_2_2 = Entry(control_2, width=20)
+        ctrl_2_3 = Entry(control_2, width=20)
+        ctrl_2_4 = Entry(control_2, width=20)
+        ctrl_2_5 = Entry(control_2, width=20)
 
         #control tab 3 entry box
-        c_3_0 = Entry(control_3, width=20)
-        c_3_1 = Entry(control_3, width=20)
-        c_3_2 = Entry(control_3, width=20)
-        c_3_3 = Entry(control_3, width=20)
-        c_3_4 = Entry(control_3, width=20)
-        c_3_5 = Entry(control_3, width=20)
+        ctrl_3_0 = Entry(control_3, width=20)
+        ctrl_3_1 = Entry(control_3, width=20)
+        ctrl_3_2 = Entry(control_3, width=20)
+        ctrl_3_3 = Entry(control_3, width=20)
+        ctrl_3_4 = Entry(control_3, width=20)
+        ctrl_3_5 = Entry(control_3, width=20)
 
         #control tab 4 entry box
-        c_4_0 = Entry(control_4, width=20)
-        c_4_1 = Entry(control_4, width=20)
-        c_4_2 = Entry(control_4, width=20)
-        c_4_3 = Entry(control_4, width=20)
-        c_4_4 = Entry(control_4, width=20)
-        c_4_5 = Entry(control_4, width=20)
+        ctrl_4_0 = Entry(control_4, width=20)
+        ctrl_4_1 = Entry(control_4, width=20)
+        ctrl_4_2 = Entry(control_4, width=20)
+        ctrl_4_3 = Entry(control_4, width=20)
+        ctrl_4_4 = Entry(control_4, width=20)
+        ctrl_4_5 = Entry(control_4, width=20)
 
         #get control 1, 2, 3, and 4 entries from entry box
         def get_entry(TAB_NUM):
                 #control tab 1
-                global c100 # Value_0
-                global c101 # Value_1
-                global c102 # Value_2
-                global c103 # Value_3
-                global c104 # Value_4
-                global c105 # Value_5
+                global ctrl_100 # Value_0
+                global ctrl_101 # Value_1
+                global ctrl_102 # Value_2
+                global ctrl_103 # Value_3
+                global ctrl_104 # Value_4
+                global ctrl_105 # Value_5
 
                 #control tab 2
-                global c200 # Value_0
-                global c201 # Value_1
-                global c202 # Value_2
-                global c203 # Value_3
-                global c204 # Value_4
-                global c205 # Value_5
+                global ctrl_200 # Value_0
+                global ctrl_201 # Value_1
+                global ctrl_202 # Value_2
+                global ctrl_203 # Value_3
+                global ctrl_204 # Value_4
+                global ctrl_205 # Value_5
 
                 #control tab 3
-                global c300 # Value_0
-                global c301 # Value_1
-                global c302 # Value_2
-                global c303 # Value_3
-                global c304 # Value_4
-                global c305 # Value_5
+                global ctrl_300 # Value_0
+                global ctrl_301 # Value_1
+                global ctrl_302 # Value_2
+                global ctrl_303 # Value_3
+                global ctrl_304 # Value_4
+                global ctrl_305 # Value_5
 
                 #control tab 4
-                global c400 # Value_0
-                global c401 # Value_1
-                global c402 # Value_2
-                global c403 # Value_3
-                global c404 # Value_4
-                global c405 # Value_5
+                global ctrl_400 # Value_0
+                global ctrl_401 # Value_1
+                global ctrl_402 # Value_2
+                global ctrl_403 # Value_3
+                global ctrl_404 # Value_4
+                global ctrl_405 # Value_5
 
                 #control tab 1 get Values 0, 1, 2, 3, 4, 5
-                c100 = c_1_0.get()
-                c101 = c_1_1.get()
-                c102 = c_1_2.get()
-                c103 = c_1_3.get()
-                c104 = c_1_4.get()
-                c105 = c_1_5.get()
+                ctrl_100 = ctrl_1_0.get()
+                ctrl_101 = ctrl_1_1.get()
+                ctrl_102 = ctrl_1_2.get()
+                ctrl_103 = ctrl_1_3.get()
+                ctrl_104 = ctrl_1_4.get()
+                ctrl_105 = ctrl_1_5.get()
 
                 #test - getting values from TCP settings entry boxes and display them into entry boxes below:
                 entry100.delete(0, END)
-                entry100.insert(END, c_1_0.get())
+                entry100.insert(END, ctrl_1_0.get())
                 entry101.delete(0, END)
-                entry101.insert(END, c_1_1.get())
+                entry101.insert(END, ctrl_1_1.get())
                 entry102.delete(0, END)
-                entry102.insert(END, c_1_2.get())
+                entry102.insert(END, ctrl_1_2.get())
                 entry103.delete(0, END)
-                entry103.insert(END, c_1_3.get())
+                entry103.insert(END, ctrl_1_3.get())
                 entry104.delete(0, END)
-                entry104.insert(END, c_1_4.get())
+                entry104.insert(END, ctrl_1_4.get())
                 entry105.delete(0, END)
-                entry105.insert(END, c_1_5.get())
-                entry105.insert(END, count)
+                entry105.insert(END, ctrl_1_5.get())
+                entry105.insert(END, COUNT)
                 
                 #tab 2 get Serial/CAN Settings
-                c200 = c_2_0.get()
-                c201 = c_2_1.get()
-                c202 = c_2_2.get()
-                c203 = c_2_3.get()
-                c204 = c_2_4.get()
-                c205 = c_2_5.get()
+                ctrl_200 = ctrl_2_0.get()
+                ctrl_201 = ctrl_2_1.get()
+                ctrl_202 = ctrl_2_2.get()
+                ctrl_203 = ctrl_2_3.get()
+                ctrl_204 = ctrl_2_4.get()
+                ctrl_205 = ctrl_2_5.get()
 
                 #tab 3 get Bluetooth settings
-                c300 = c_3_0.get()
-                c301 = c_3_1.get()
-                c302 = c_3_2.get()
-                c303 = c_3_3.get()
-                c304 = c_3_4.get()
-                c305 = c_3_5.get()
+                ctrl_300 = ctrl_3_0.get()
+                ctrl_301 = ctrl_3_1.get()
+                ctrl_302 = ctrl_3_2.get()
+                ctrl_303 = ctrl_3_3.get()
+                ctrl_304 = ctrl_3_4.get()
+                ctrl_305 = ctrl_3_5.get()
 
                 #tab 4 get Wifi settings
-                c400 = c_4_0.get()
-                c401 = c_4_1.get()
-                c402 = c_4_2.get()
-                c403 = c_4_3.get()
-                c404 = c_4_4.get()
-                c405 = c_4_5.get()
+                ctrl_400 = ctrl_4_0.get()
+                ctrl_401 = ctrl_4_1.get()
+                ctrl_402 = ctrl_4_2.get()
+                ctrl_403 = ctrl_4_3.get()
+                ctrl_404 = ctrl_4_4.get()
+                ctrl_405 = ctrl_4_5.get()
 
                 #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
                 entry107.delete(0, END)
-                entry107.insert(END, c_2_0.get())
+                entry107.insert(END, ctrl_2_0.get())
                 entry108.delete(0, END)
-                entry108.insert(END, c_2_1.get())
+                entry108.insert(END, ctrl_2_1.get())
                 entry109.delete(0, END)
-                entry109.insert(END, c_2_2.get())
+                entry109.insert(END, ctrl_2_2.get())
                 entry110.delete(0, END)
-                entry110.insert(END, c_2_3.get())
+                entry110.insert(END, ctrl_2_3.get())
                 entry111.delete(0, END)
-                entry112.insert(END, c_2_4.get())
+                entry112.insert(END, ctrl_2_4.get())
                 entry113.delete(0, END)
-                entry114.insert(END, c_2_0.get())
+                entry114.insert(END, ctrl_2_0.get())
 
                 print("Tab_NUMBER: ", TAB_NUM)
-                print("C0: ", c100)
-                print("C1: ", c101)
-                print("C2: ", c102)
-                print("C3: ", c103)
-                print("C4: ", c104)
-                print("C5: ", c105)
+                print("C0: ", ctrl_100)
+                print("C1: ", ctrl_101)
+                print("C2: ", ctrl_102)
+                print("C3: ", ctrl_103)
+                print("C4: ", ctrl_104)
+                print("C5: ", ctrl_105)
 
         #up counter
-        output = 0
         def count_up():
-                count = 0
-                global output
-                count = count + 1
-                output = count
-                c_1_0.delete(0, END)
-                c_1_0.insert(END, count)
+                COUNT = 0
+                global OUTPUT
+                COUNT = COUNT + 1
+                OUTPUT = COUNT
+                ctrl_1_0.delete(0, END)
+                ctrl_1_0.insert(END, COUNT)
 
         #down counter
         def count_down():
-                count = 0
-                global out_put
-                count = count - 1
-                output = count
-                c_1_0.delete(0, END)
-                c_1_0.insert(END, count)
+                COUNT = 0
+                global OUTPUT
+                COUNT = COUNT - 1
+                OUTPUT = COUNT
+                ctrl_1_0.delete(0, END)
+                ctrl_1_0.insert(END, COUNT)
 
 
         #c_1_0.delete(0, END)
@@ -790,20 +789,20 @@ def troubleshoot_wizard():
         btn_2_c6 = Button(control_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #control tab 1 entry boxes on screen
-        c_1_0.grid(row=3, column=1, sticky="wne")
-        c_1_1.grid(row=4, column=1, sticky="wne")
-        c_1_2.grid(row=5, column=1, sticky="wne")
-        c_1_3.grid(row=6, column=1, sticky="wne")
-        c_1_4.grid(row=7, column=1, sticky="wne")
-        c_2_5.grid(row=8, column=1, sticky="wne")
+        ctrl_1_0.grid(row=3, column=1, sticky="wne")
+        ctrl_1_1.grid(row=4, column=1, sticky="wne")
+        ctrl_1_2.grid(row=5, column=1, sticky="wne")
+        ctrl_1_3.grid(row=6, column=1, sticky="wne")
+        ctrl_1_4.grid(row=7, column=1, sticky="wne")
+        ctrl_2_5.grid(row=8, column=1, sticky="wne")
 
         #control tab 2 show entry boxes on screen
-        c_2_0.grid(row=3, column=1, sticky="wne")
-        c_2_1.grid(row=4, column=1, sticky="wne")
-        c_2_2.grid(row=5, column=1, sticky="wne")
-        c_2_3.grid(row=6, column=1, sticky="wne")
-        c_2_4.grid(row=7, column=1, sticky="wne")
-        c_2_5.grid(row=8, column=1, sticky="wne")
+        ctrl_2_0.grid(row=3, column=1, sticky="wne")
+        ctrl_2_1.grid(row=4, column=1, sticky="wne")
+        ctrl_2_2.grid(row=5, column=1, sticky="wne")
+        ctrl_2_3.grid(row=6, column=1, sticky="wne")
+        ctrl_2_4.grid(row=7, column=1, sticky="wne")
+        ctrl_2_5.grid(row=8, column=1, sticky="wne")
         troubleshooter.mainloop()
 
 

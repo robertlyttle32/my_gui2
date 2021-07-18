@@ -321,79 +321,79 @@ def communication_wizard(object):
 
         #get TCP, Serial/CAN, Bluetooth, and Wifi settings menu entries
         def get_entry(TAB_NUM):
-                global comm_100 # TCP
-                global comm_101 # TCP
-                global comm_102 # TCP
-                global comm_103 # TCP
-                global comm_104 # TCP
-                global comm_105 # TCP
+                global comm_1_output_1 # TCP
+                global comm_1_output_2 # TCP
+                global comm_1_output_3 # TCP
+                global comm_1_output_4 # TCP
+                global comm_1_output_5 # TCP
+                global comm_1_output_6 # TCP
 
-                global comm_200 # Serial/CAN
-                global comm_201 # Serial/CAN
-                global comm_202 # Serial/CAN
-                global comm_203 # Serial/CAN
-                global comm_204 # Serial/CAN
-                global comm_205 # Serial/CAN
+                global comm_2_output_1 # Serial/CAN
+                global comm_2_output_2 # Serial/CAN
+                global comm_2_output_3 # Serial/CAN
+                global comm_2_output_4 # Serial/CAN
+                global comm_2_output_5 # Serial/CAN
+                global comm_2_output_6 # Serial/CAN
 
-                global comm_300 # Bluetooth
-                global comm_301 # Bluetooth
-                global comm_302 # Bluetooth
-                global comm_303 # Bluetooth
-                global comm_304 # Bluetooth
-                global comm_305 # Bluetooth
+                global comm_3_output_1 # Bluetooth
+                global comm_3_output_2 # Bluetooth
+                global comm_3_output_3 # Bluetooth
+                global comm_3_output_4 # Bluetooth
+                global comm_3_output_5 # Bluetooth
+                global comm_3_output_6 # Bluetooth
 
-                global comm_400 # Wifi
-                global comm_401 # Wifi
-                global comm_402 # Wifi
-                global comm_403 # wifi
-                global comm_404 # wifi
-                global comm_405 # wifi
+                global comm_4_output_1 # Wifi
+                global comm_4_output_2 # Wifi
+                global comm_4_output_3 # Wifi
+                global comm_4_output_4 # wifi
+                global comm_4_output_5 # wifi
+                global comm_4_output_6 # wifi
 
                 #tab 1 get TCP settings
-                comm_100 = comm_1_entry_3_1.get()
-                comm_101 = comm_1_entry_4_1.get()
-                comm_102 = comm_1_entry_5_1.get()
-                comm_103 = comm_1_entry_3_1.get()
-                comm_104 = comm_1_entry_4_1.get()
-                comm_105 = comm_1_entry_5_1.get()
+                comm_1_output_1 = comm_1_entry_3_1.get()
+                comm_1_output_2 = comm_1_entry_4_1.get()
+                comm_1_output_3 = comm_1_entry_5_1.get()
+                comm_1_output_4 = comm_1_entry_3_1.get()
+                comm_1_output_5 = comm_1_entry_4_1.get()
+                comm_1_output_6 = comm_1_entry_5_1.get()
 
                 #test - getting values from TCP settings entry boxes and display them into entry boxes below:
                 mw_1_entry_3_2.delete(0, END)
-                mw_1_entry_3_2.insert(END, comm_1_0.get())
+                mw_1_entry_3_2.insert(END, comm_1_entry_3_1.get())
                 mw_1_entry_4_2.delete(0, END)
-                mw_1_entry_4_2.insert(END, comm_1_1.get())
+                mw_1_entry_4_2.insert(END, comm_1_entry_4_1.get())
                 mw_1_entry_5_2.delete(0, END)
-                mw_1_entry_5_2.insert(END, comm_1_2.get())
+                mw_1_entry_5_2.insert(END, comm_1_entry_5_1.get())
                 mw_1_entry_6_2.delete(0, END)
-                mw_1_entry_6_2.insert(END, comm_1_3.get())
+                mw_1_entry_6_2.insert(END, comm_1_entry_6_1.get())
                 mw_1_entry_7_2.delete(0, END)
-                mw_1_entry_7_2.insert(END, comm_1_4.get())
+                mw_1_entry_7_2.insert(END, comm_1_entry_7_1.get())
                 mw_1_entry_8_2.delete(0, END)
-                mw_1_entry_8_2.insert(END, comm_1_5.get())
+                mw_1_entry_8_2.insert(END, comm_1_entry_8_1.get())
                 
                 #tab 2 get Serial/CAN Settings
-                comm_200 = comm_2_entry_3_1.get()
-                comm_201 = comm_2_entry_4_1.get()
-                comm_202 = comm_2_entry_5_1.get()
-                comm_203 = comm_2_entry_6_1.get()
-                comm_204 = comm_2_entry_7_1.get()
-                comm_205 = comm_2_entry_8_1.get()
+                comm_2_output_1 = comm_2_entry_3_1.get()
+                comm_2_output_2 = comm_2_entry_4_1.get()
+                comm_2_output_3 = comm_2_entry_5_1.get()
+                comm_2_output_4 = comm_2_entry_6_1.get()
+                comm_2_output_5 = comm_2_entry_7_1.get()
+                comm_2_output_6 = comm_2_entry_8_1.get()
 
                 #tab 3 get Bluetooth settings
-                comm_300 = comm_3_entry_3_1.get()
-                comm_301 = comm_3_entry_4_1.get()
-                comm_302 = comm_3_entry_5_1.get()
-                comm_303 = comm_3_entry_6_1.get()
-                comm_304 = comm_3_entry_7_1.get()
-                comm_305 = comm_3_entry_8_1.get()
+                comm_3_output_1 = comm_3_entry_3_1.get()
+                comm_3_output_2 = comm_3_entry_4_1.get()
+                comm_3_output_3 = comm_3_entry_5_1.get()
+                comm_3_output_4 = comm_3_entry_6_1.get()
+                comm_3_output_5 = comm_3_entry_7_1.get()
+                comm_3_output_6 = comm_3_entry_8_1.get()
 
                 #tab 4 get Wifi settings
-                comm_400 = comm_4_entry_3_1.get()
-                comm_401 = comm_4_entry_4_1.get()
-                comm_402 = comm_4_entry_5_1.get()
-                comm_403 = comm_4_entry_6_1.get()
-                comm_404 = comm_4_entry_7_1.get()
-                comm_405 = comm_4_entry_8_1.get()
+                comm_4_output_1 = comm_4_entry_3_1.get()
+                comm_4_output_2 = comm_4_entry_4_1.get()
+                comm_4_output_3 = comm_4_entry_5_1.get()
+                comm_4_output_4 = comm_4_entry_6_1.get()
+                comm_4_output_5 = comm_4_entry_7_1.get()
+                comm_4_output_6 = comm_4_entry_8_1.get()
 
                 #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
                 mw_1_entry_3_2.delete(0, END)
@@ -410,12 +410,12 @@ def communication_wizard(object):
                 mw_1_entry_9_2.insert(END, comm_2_entry_8_1.get())
 
                 print("Tab_NUMBER: ", TAB_NUM)
-                print("E0: ", comm_100)
-                print("E1: ", comm_101)
-                print("E2: ", comm_102)
-                print("E3: ", comm_103)
-                print("E4: ", comm_104)
-                print("E5: ", comm_105)
+                print("COM1_1: ", comm_1_output_1)
+                print("COM1_2: ", comm_1_output_2)
+                print("COM1_3: ", comm_1_output_3)
+                print("COM1_4: ", comm_1_output_4)
+                print("COM1_5: ", comm_1_output_5)
+                print("COM1_6: ", comm_1_output_6)
 
         #tab 1, 2, 3, and 4 settings window menu labels
         comm_1_label_1_0 = Label(comm_tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
@@ -505,8 +505,8 @@ def set_date():
 		month, day, year = video_date.split('/')
 		global DATE
 		DATE  = '0{}/0{}/{}'.format(day, month, year)
-		entry100.delete(0, END)
-		entry100.insert(END, DATE)
+		mw_1_entry_3_2.delete(0, END)
+		mw_1_entry_3_2.insert(END, DATE)
 		print('Date: ', DATE)
 		root.destroy()
 
@@ -699,12 +699,12 @@ def troubleshoot_wizard():
                 ctrl_3_output_6 = ctrl_3_entry_8_1.get()
 
                 #tab 4 get Wifi settings
-                ctrl_400 = ctrl_4_entry_3_1.get()
-                ctrl_401 = ctrl_4_entry_4_1.get()
-                ctrl_402 = ctrl_4_entry_5_1.get()
-                ctrl_403 = ctrl_4_entry_6_1.get()
-                ctrl_404 = ctrl_4_entry_7_1.get()
-                ctrl_405 = ctrl_4_entry_8_1.get()
+                ctrl_4_output_1 = ctrl_4_entry_3_1.get()
+                ctrl_4_output_2 = ctrl_4_entry_4_1.get()
+                ctrl_4_output_3 = ctrl_4_entry_5_1.get()
+                ctrl_4_output_4 = ctrl_4_entry_6_1.get()
+                ctrl_4_output_5 = ctrl_4_entry_7_1.get()
+                ctrl_4_output_6 = ctrl_4_entry_8_1.get()
 
                 #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
                 mw_1_entry_3_2.delete(0, END)
@@ -883,31 +883,31 @@ mw_1_label_10_1 = Label(window, text="07: ").grid(row=10, column=1, sticky="wn",
 mw_1_label_11_1 = Label(window, text="08: ").grid(row=11, column=1, sticky="wn", padx=5)
 mw_1_label_12_1 = Label(window, text="09: ").grid(row=12, column=1, sticky="wn", padx=5)
 mw_1_label_13_1 = Label(window, text="10: ").grid(row=13, column=1, sticky="wn", padx=5)
-l111 = Label(window, text="11: ").grid(row=14, column=1, sticky="wn", padx=5)
-l112 = Label(window, text="12: ").grid(row=15, column=1, sticky="wn", padx=5)
-l113 = Label(window, text="13: ").grid(row=16, column=1, sticky="wn", padx=5)
-l114 = Label(window, text="14: ").grid(row=17, column=1, sticky="wn", padx=5)
+mw_1_label_14_1 = Label(window, text="11: ").grid(row=14, column=1, sticky="wn", padx=5)
+mw_1_label_15_1 = Label(window, text="12: ").grid(row=15, column=1, sticky="wn", padx=5)
+mw_1_label_16_1 = Label(window, text="13: ").grid(row=16, column=1, sticky="wn", padx=5)
+mw_1_label_17_1 = Label(window, text="14: ").grid(row=17, column=1, sticky="wn", padx=5)
 
 #tab 2 main window label
-l200 = Label(window_1, text="Diagnostics: ").grid(row=3, column=0, sticky="wn", padx=5)
+mw_2_label_3_0 = Label(window_1, text="Diagnostics: ").grid(row=3, column=0, sticky="wn", padx=5)
 
 #tab 1 show main window entry box
-mw_1_entry_3.grid(row=3, column=2, sticky="wne", padx=5)
-mw_1_entry_4.grid(row=4, column=2, sticky="wne", padx=5)
-mw_1_entry_5.grid(row=5, column=2, sticky="wne", padx=5)
-mw_1_entry_6.grid(row=6, column=2, sticky="wne", padx=5)
-mw_1_entry_7.grid(row=7, column=2, sticky="wne", padx=5)
-mw_1_entry_8.grid(row=8, column=2, sticky="wne", padx=5)
-mw_1_entry_9.grid(row=9, column=2, sticky="wne", padx=5)
-mw_1_entry_10.grid(row=10, column=2, sticky="wne", padx=5)
-mw_1_entry_11.grid(row=11, column=2, sticky="wne", padx=5)
-mw_1_entry_12.grid(row=12, column=2, sticky="wne", padx=5)
-mw_1_entry_13.grid(row=13, column=2, sticky="wne", padx=5)
-mw_1_entry_14.grid(row=14, column=2, sticky="wne", padx=5)
-mw_1_entry_15.grid(row=15, column=2, sticky="wne", padx=5)
-mw_1_entry_16.grid(row=16, column=2, sticky="wne", padx=5)
-mw_1_entry_17.grid(row=17, column=2, sticky="wne", padx=5)
-mw_1_entry_18.grid(row=18, column=2, sticky="wne", padx=5)
+mw_1_entry_3_2.grid(row=3, column=2, sticky="wne", padx=5)
+mw_1_entry_4_2.grid(row=4, column=2, sticky="wne", padx=5)
+mw_1_entry_5_2.grid(row=5, column=2, sticky="wne", padx=5)
+mw_1_entry_6_2.grid(row=6, column=2, sticky="wne", padx=5)
+mw_1_entry_7_2.grid(row=7, column=2, sticky="wne", padx=5)
+mw_1_entry_8_2.grid(row=8, column=2, sticky="wne", padx=5)
+mw_1_entry_9_2.grid(row=9, column=2, sticky="wne", padx=5)
+mw_1_entry_10_2.grid(row=10, column=2, sticky="wne", padx=5)
+mw_1_entry_11_2.grid(row=11, column=2, sticky="wne", padx=5)
+mw_1_entry_12_2.grid(row=12, column=2, sticky="wne", padx=5)
+mw_1_entry_13_2.grid(row=13, column=2, sticky="wne", padx=5)
+mw_1_entry_14_2.grid(row=14, column=2, sticky="wne", padx=5)
+mw_1_entry_15_2.grid(row=15, column=2, sticky="wne", padx=5)
+mw_1_entry_16_2.grid(row=16, column=2, sticky="wne", padx=5)
+mw_1_entry_17_2.grid(row=17, column=2, sticky="wne", padx=5)
+mw_1_entry_18_2.grid(row=18, column=2, sticky="wne", padx=5)
 
 #create main window
 window_tabs.mainloop()

@@ -362,9 +362,9 @@ def communication_wizard(object):
                 comm_1_output_1 = comm_1_entry_3_1.get()
                 comm_1_output_2 = comm_1_entry_4_1.get()
                 comm_1_output_3 = comm_1_entry_5_1.get()
-                comm_1_output_4 = comm_1_entry_3_1.get()
-                comm_1_output_5 = comm_1_entry_4_1.get()
-                comm_1_output_6 = comm_1_entry_5_1.get()
+                comm_1_output_4 = comm_1_entry_6_1.get()
+                comm_1_output_5 = comm_1_entry_7_1.get()
+                comm_1_output_6 = comm_1_entry_8_1.get()
                 
                 #tab 2 get Serial/CAN Settings
                 comm_2_output_1 = comm_2_entry_3_1.get()
@@ -421,8 +421,9 @@ def communication_wizard(object):
                 print("COM4_4: ", comm_4_output_4)
                 print("COM4_5: ", comm_4_output_5)
                 print("COM4_6: ", comm_4_output_6)
-                TCP_IP = "host"
-                TCP_PORT = 22
+                TCP_IP = comm_1_output_1
+                comm_1_output_5 = int(comm_1_output_5)
+                TCP_PORT = comm_1_output_5
                 def tcp_init():
                         tcp_listen.tcp(TCP_IP, TCP_PORT)
                 thread_tcp_listen = threading.Thread(target=tcp_init)

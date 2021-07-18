@@ -2,7 +2,7 @@ import socket
 import sys
 import time
 
-#serverIP = '192.168.1.221'
+#serverIP = 'host'
 #serverPort = 5103
 
 BUFFER_SIZE = 400

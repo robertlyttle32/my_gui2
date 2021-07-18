@@ -359,17 +359,17 @@ def communication_wizard(object):
 
                 #test - getting values from TCP settings entry boxes and display them into entry boxes below:
                 mw_1_entry_3_2.delete(0, END)
-                mw_1_entry_3_2.insert(END, comm_1_entry_3_1.get())
+                mw_1_entry_3_2.insert(END, comm_1_output_1)
                 mw_1_entry_4_2.delete(0, END)
-                mw_1_entry_4_2.insert(END, comm_1_entry_4_1.get())
+                mw_1_entry_4_2.insert(END, comm_1_output_2)
                 mw_1_entry_5_2.delete(0, END)
-                mw_1_entry_5_2.insert(END, comm_1_entry_5_1.get())
+                mw_1_entry_5_2.insert(END, comm_1_output_3)
                 mw_1_entry_6_2.delete(0, END)
-                mw_1_entry_6_2.insert(END, comm_1_entry_6_1.get())
+                mw_1_entry_6_2.insert(END, comm_1_output_4)
                 mw_1_entry_7_2.delete(0, END)
-                mw_1_entry_7_2.insert(END, comm_1_entry_7_1.get())
+                mw_1_entry_7_2.insert(END, comm_1_output_5)
                 mw_1_entry_8_2.delete(0, END)
-                mw_1_entry_8_2.insert(END, comm_1_entry_8_1.get())
+                mw_1_entry_8_2.insert(END, comm_1_output_6)
                 
                 #tab 2 get Serial/CAN Settings
                 comm_2_output_1 = comm_2_entry_3_1.get()
@@ -397,17 +397,17 @@ def communication_wizard(object):
 
                 #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
                 mw_1_entry_3_2.delete(0, END)
-                mw_1_entry_3_2.insert(END, comm_2_entry_3_1.get())
+                mw_1_entry_3_2.insert(END, comm_1_output_1)
                 mw_1_entry_4_2.delete(0, END)
-                mw_1_entry_4_2.insert(END, comm_2_entry_4_1.get())
+                mw_1_entry_4_2.insert(END, comm_1_output_2)
                 mw_1_entry_5_2.delete(0, END)
-                mw_1_entry_5_2.insert(END, comm_2_entry_5_1.get())
+                mw_1_entry_5_2.insert(END, comm_1_output_3)
                 mw_1_entry_6_2.delete(0, END)
-                mw_1_entry_6_2.insert(END, comm_2_entry_6_1.get())
+                mw_1_entry_6_2.insert(END, comm_1_output_4)
                 mw_1_entry_7_2.delete(0, END)
-                mw_1_entry_7_2.insert(END, comm_2_entry_7_1.get())
+                mw_1_entry_7_2.insert(END, comm_1_output_5)
                 mw_1_entry_8_2.delete(0, END)
-                mw_1_entry_9_2.insert(END, comm_2_entry_8_1.get())
+                mw_1_entry_9_2.insert(END, comm_1_output_6)
 
                 print("Tab_NUMBER: ", TAB_NUM)
                 print("COM1_1: ", comm_1_output_1)
@@ -669,17 +669,17 @@ def troubleshoot_wizard():
 
                 #test - getting values from TCP settings entry boxes and display them into entry boxes below:
                 mw_1_entry_3_2.delete(0, END)
-                mw_1_entry_3_2.insert(END, ctrl_1_entry_3_1.get())
+                mw_1_entry_3_2.insert(END, ctrl_1_output_1)
                 mw_1_entry_4_2.delete(0, END)
-                mw_1_entry_4_2.insert(END, ctrl_1_entry_4_1.get())
+                mw_1_entry_4_2.insert(END, ctrl_1_output_2)
                 mw_1_entry_5_2.delete(0, END)
-                mw_1_entry_5_2.insert(END, ctrl_1_entry_5_1.get())
+                mw_1_entry_5_2.insert(END, ctrl_1_output_3)
                 mw_1_entry_6_2.delete(0, END)
-                mw_1_entry_6_2.insert(END, ctrl_1_entry_6_1.get())
+                mw_1_entry_6_2.insert(END, ctrl_1_output_4)
                 mw_1_entry_7_2.delete(0, END)
-                mw_1_entry_8_2.insert(END, ctrl_1_entry_7_1.get())
+                mw_1_entry_8_2.insert(END, ctrl_1_output_5)
                 mw_1_entry_9_2.delete(0, END)
-                mw_1_entry_10_2.insert(END, ctrl_1_entry_8_1.get())
+                mw_1_entry_10_2.insert(END, ctrl_1_output_6)
                 mw_1_entry_11_2.insert(END, COUNT)
                 
                 #tab 2 get Serial/CAN Settings

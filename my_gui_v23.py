@@ -842,7 +842,7 @@ mw_1_entry_17_2 = Entry(window, width=10)
 mw_1_entry_18_2 = Entry(window, width=10)
 
 #tab 1 main window buttons
-mw_1_btn_2_0 = Button(window, text="Import video", command=file1).grid(row=2, column=0, sticky="ew", padx=5)
+mw_1_btn_2_0 = Button(window, text="Import file", command=file1).grid(row=2, column=0, sticky="ew", padx=5)
 mw_1_btn_3_0 = Button(window, text="Button_00", command=button_0).grid(row=3, column=0, sticky="ew", padx=5)
 mw_1_btn_4_0 = Button(window, text="Button_01", command=button_1).grid(row=4, column=0, sticky="ew", padx=5)
 mw_1_btn_5_0 = Button(window, text="Button_02", command=button_2).grid(row=5, column=0, sticky="ew", padx=5)
@@ -880,7 +880,7 @@ mw_1_btn_15_3 = Button(window, text="+", command=lambda:settings_menu(12)).grid(
 mw_1_btn_16_3 = Button(window, text="+", command=lambda:settings_menu(13)).grid(row=16, column=3, sticky="ew", padx=5)
 mw_1_btn_17_3 = Button(window, text="+", command=lambda:settings_menu(14)).grid(row=17, column=3, sticky="ew", padx=5)
 mw_1_btn_set_date_17_3 = Button(window, text = "Select Date", command = set_date).grid(row=18, column=0, sticky="ew", padx=5) # tab 1 main window
-mw_1_btn_Import_file_19_0 = Button(window, text="Expot port file", command=file0).grid(row=19, column=0, sticky="ew", padx=5) # tab 1 main window
+mw_1_btn_Import_file_19_0 = Button(window, text="Export file", command=file0).grid(row=19, column=0, sticky="ew", padx=5) # tab 1 main window
 mw_1_btn_add_camera_20_0 = Button(window, text="Add Camera", command=add_camera).grid(row=20, column=0, sticky="ew", padx=5) # tab 1 main window
 mw_1_btn_clear_21_0 = Button(window, text="Clear", command=clear).grid(row=21, column=0, sticky="ew", padx=5) # tab 1 main window
 mw_1_btn_exit_24_0 = Button(window, text="Exit", command=exit).grid(row=24, column=0, sticky="ew", padx=5) #tab 1 main window

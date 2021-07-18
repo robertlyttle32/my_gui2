@@ -364,20 +364,6 @@ def communication_wizard(object):
                 comm_1_output_4 = comm_1_entry_3_1.get()
                 comm_1_output_5 = comm_1_entry_4_1.get()
                 comm_1_output_6 = comm_1_entry_5_1.get()
-
-                #test - getting values from TCP settings entry boxes and display them into entry boxes below:
-                mw_1_entry_3_2.delete(0, END)
-                mw_1_entry_3_2.insert(END, comm_1_output_1)
-                mw_1_entry_4_2.delete(0, END)
-                mw_1_entry_4_2.insert(END, comm_1_output_2)
-                mw_1_entry_5_2.delete(0, END)
-                mw_1_entry_5_2.insert(END, comm_1_output_3)
-                mw_1_entry_6_2.delete(0, END)
-                mw_1_entry_6_2.insert(END, comm_1_output_4)
-                mw_1_entry_7_2.delete(0, END)
-                mw_1_entry_7_2.insert(END, comm_1_output_5)
-                mw_1_entry_8_2.delete(0, END)
-                mw_1_entry_8_2.insert(END, comm_1_output_6)
                 
                 #tab 2 get Serial/CAN Settings
                 comm_2_output_1 = comm_2_entry_3_1.get()
@@ -403,20 +389,6 @@ def communication_wizard(object):
                 comm_4_output_5 = comm_4_entry_7_1.get()
                 comm_4_output_6 = comm_4_entry_8_1.get()
 
-                #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
-                mw_1_entry_3_2.delete(0, END)
-                mw_1_entry_3_2.insert(END, comm_1_output_1)
-                mw_1_entry_4_2.delete(0, END)
-                mw_1_entry_4_2.insert(END, comm_1_output_2)
-                mw_1_entry_5_2.delete(0, END)
-                mw_1_entry_5_2.insert(END, comm_1_output_3)
-                mw_1_entry_6_2.delete(0, END)
-                mw_1_entry_6_2.insert(END, comm_1_output_4)
-                mw_1_entry_7_2.delete(0, END)
-                mw_1_entry_7_2.insert(END, comm_1_output_5)
-                mw_1_entry_8_2.delete(0, END)
-                mw_1_entry_9_2.insert(END, comm_1_output_6)
-
                 print("Tab_NUMBER: ", TAB_NUM)
                 print("COM1_1: ", comm_1_output_1)
                 print("COM1_2: ", comm_1_output_2)
@@ -424,6 +396,30 @@ def communication_wizard(object):
                 print("COM1_4: ", comm_1_output_4)
                 print("COM1_5: ", comm_1_output_5)
                 print("COM1_6: ", comm_1_output_6)
+
+                print("Tab_NUMBER: ", TAB_NUM)
+                print("COM2_1: ", comm_2_output_1)
+                print("COM2_2: ", comm_2_output_2)
+                print("COM2_3: ", comm_2_output_3)
+                print("COM2_4: ", comm_2_output_4)
+                print("COM2_5: ", comm_2_output_5)
+                print("COM2_6: ", comm_2_output_6)
+
+                print("Tab_NUMBER: ", TAB_NUM)
+                print("COM3_1: ", comm_3_output_1)
+                print("COM3_2: ", comm_3_output_2)
+                print("COM3_3: ", comm_3_output_3)
+                print("COM3_4: ", comm_3_output_4)
+                print("COM3_5: ", comm_3_output_5)
+                print("COM3_6: ", comm_3_output_6)
+
+                print("Tab_NUMBER: ", TAB_NUM)
+                print("COM4_1: ", comm_4_output_1)
+                print("COM4_2: ", comm_4_output_2)
+                print("COM4_3: ", comm_4_output_3)
+                print("COM4_4: ", comm_4_output_4)
+                print("COM4_5: ", comm_4_output_5)
+                print("COM4_6: ", comm_4_output_6)
 
         #tab 1, 2, 3, and 4 settings window menu labels
         comm_1_label_1_0 = Label(comm_tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
@@ -474,6 +470,17 @@ def communication_wizard(object):
         comm_2_entry_6_1.grid(row=6, column=1, sticky="wne")
         comm_2_entry_7_1.grid(row=7, column=1, sticky="wne")
         comm_2_entry_8_1.grid(row=8, column=1, sticky="wne")
+
+        #test - getting values from TCP settings entry boxes and display them into entry boxes below:
+        #mw_1_entry_3_2.delete(0, END)
+        #mw_1_entry_3_2.insert(END, comm_1_output_1)
+
+
+        #test - getting values from  Serial/CAN settings entry boxes and display them into entry boxes below:
+        #mw_1_entry_3_2.delete(0, END)
+        #mw_1_entry_3_2.insert(END, comm_2_output_1)
+
+
         Tabs.mainloop()
 
 #call settings funtions here

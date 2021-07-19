@@ -214,21 +214,22 @@ def add_camera():
 	camera = mw_1_entry_4_2.get()
 	print('Camera: ',camera)
 	mw_1_entry_4_2.delete(0, END)
-	
-def stop():
-	stop = True
-	mw_1_entry_3_2.delete(0, END)
-	mw_1_entry_4_2.delete(0, END)
-	mw_1_entry_5_2.delete(0, END)
-	mw_1_entry_6_2.delete(0, END)
-	mw_1_entry_7_2.delete(0, END)
-	mw_1_entry_8_2.delete(0, END)
-	mw_1_entry_9_2.delete(0, END)
-	mw_1_entry_10_2.delete(0, END)
-	mw_1_entry_11_2.delete(0, END)
-	mw_1_entry_12_2.delete(0, END)
-	print(stop)
 
+def stop():
+        stop = True
+        mw_1_entry_3_2.delete(0, END)
+        mw_1_entry_4_2.delete(0, END)
+        mw_1_entry_5_2.delete(0, END)
+        mw_1_entry_6_2.delete(0, END)
+        mw_1_entry_7_2.delete(0, END)
+        mw_1_entry_8_2.delete(0, END)
+        mw_1_entry_9_2.delete(0, END)
+        mw_1_entry_10_2.delete(0, END)
+        mw_1_entry_11_2.delete(0, END)
+        mw_1_entry_12_2.delete(0, END)
+        tcp_listen.close_socket()
+        print(stop)
+        
 def exit():
         global stop
         stop = True

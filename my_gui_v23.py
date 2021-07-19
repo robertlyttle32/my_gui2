@@ -430,6 +430,86 @@ def communication_wizard(object):
                 thread_tcp_listen = threading.Thread(target=tcp_init)
                 thread_tcp_listen.start()
 
+                if button_select == 0:
+                        message0 = "0" #"This is entry box 0 .........."
+                        mw_1_entry_3_2.delete(0, END)
+                        mw_1_entry_3_2.insert(END, message0)
+
+                elif button_select == 1:
+                        message1 = "1"
+                        mw_1_entry_4_2.delete(0, END)
+                        mw_1_entry_4_2.insert(END, message1)
+
+                elif button_select == 2:
+                        message2 = "2"
+                        mw_1_entry_5_2.delete(0, END)
+                        mw_1_entry_5_2.insert(END, message2)
+
+                elif button_select == 3:
+                        message3 = "3"
+                        mw_1_entry_6_2.delete(0, END)
+                        mw_1_entry_6_2.insert(END, message3)
+
+                elif button_select == 4:
+                        message4 = "4"
+                        mw_1_entry_7_2.delete(0, END)
+                        mw_1_entry_7_2.insert(END, message4)
+
+                elif button_select == 5:
+                        message5 = "5"
+                        mw_1_entry_8_2.delete(0, END)
+                        mw_1_entry_8_2.insert(END, message5)
+
+                elif button_select == 6:
+                        message6 = "6"
+                        mw_1_entry_9_2.delete(0, END)
+                        mw_1_entry_9_2.insert(END, message6)
+
+                elif button_select == 7:
+                        message7 = "7"
+                        mw_1_entry_10_2.delete(0, END)
+                        mw_1_entry_10_2.insert(END, message7)
+
+                elif button_select == 8:
+                        message8 = "8"
+                        mw_1_entry_11_2.delete(0, END)
+                        mw_1_entry_11_2.insert(END, message8)
+
+                elif button_select == 9:
+                        message9 = "9"
+                        mw_1_entry_12_2.delete(0, END)
+                        mw_1_entry_12_2.insert(END, message9)
+
+                elif button_select == 10:
+                        message10 = "10"
+                        mw_1_entry_13_2.delete(0, END)
+                        mw_1_entry_13_2.insert(END, message10)
+
+                elif button_select == 11:
+                        message11 = "11"
+                        mw_1_entry_14_2.delete(0, END)
+                        mw_1_entry_14_2.insert(END, message11)
+
+                elif button_select == 12:
+                        message12 = "12"
+                        mw_1_entry_15_2.delete(0, END)
+                        mw_1_entry_15_2.insert(END, message12)
+
+                elif button_select == 13:
+                        message13 = "13"
+                        mw_1_entry_16_2.delete(0, END)
+                        mw_1_entry_16_2.insert(END, message13)
+
+                elif button_select == 14:
+                        message14 = "14"
+                        mw_1_entry_17_2.delete(0, END)
+                        mw_1_entry_17_2.insert(END, message14)
+
+                elif button_select == 15:
+                        message15 = "15"
+                        mw_1_entry_18_2.delete(0, END)
+                        mw_1_entry_18_2.insert(END, message15)
+
         #tab 1, 2, 3, and 4 settings window menu labels
         comm_1_label_1_0 = Label(comm_tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
         comm_1_label_2_0 = Label(comm_tab_2, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
@@ -494,8 +574,8 @@ def communication_wizard(object):
 
 #call settings funtions here
 def settings_menu(object):
-        global button1
         global button_select
+        global button1
         button_select = object
         button1 = not button1
         print('Pause again: ', button1)

@@ -227,7 +227,7 @@ def stop():
         mw_1_entry_10_2.delete(0, END)
         mw_1_entry_11_2.delete(0, END)
         mw_1_entry_12_2.delete(0, END)
-        tcp_listen.close_socket()
+
         print(stop)
         
 def exit():
@@ -426,7 +426,7 @@ def communication_wizard(object):
                 comm_1_output_5 = int(comm_1_output_5)
                 TCP_PORT = comm_1_output_5
                 def tcp_init():
-                        tcp_listen.tcp(TCP_IP, TCP_PORT)
+                        tcp_listen.tcp(TCP_IP, TCP_PORT, stop)
                 thread_tcp_listen = threading.Thread(target=tcp_init)
                 thread_tcp_listen.start()
 

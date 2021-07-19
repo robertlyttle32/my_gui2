@@ -11,6 +11,7 @@ TCP_IP = ""
 TCP_PORT = 0
 
 def tcp(TCP_IP, TCP_PORT):
+        global s
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
         #s.close()
@@ -32,4 +33,7 @@ def tcp(TCP_IP, TCP_PORT):
                 s.close()
                 print("connection broken")
                 pass
+
+def close_socket():
+        s.close()
 

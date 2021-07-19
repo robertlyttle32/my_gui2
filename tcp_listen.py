@@ -23,15 +23,15 @@ def tcp(TCP_IP, TCP_PORT, x):
                 data = s.recv(BUFFER_SIZE)
                 #s.close()
                 print ("received data:", data)
+                return data
 
 
         try:
-                while True:
-                        connection()
+                connection()
 
-                        if x == True:
-                                print("X is equal to: ", x)
-                                s.close()
+                if x == True:
+                        print("X is equal to: ", x)
+                        s.close()
 
         except KeyboardInterrupt:
                 s.close()

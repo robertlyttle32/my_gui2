@@ -14,7 +14,7 @@ def tcp(TCP_IP, TCP_PORT):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
         #s.close()
-        def avc_connection():
+        def connection():
                 #bytes(string, 'utf-8')
                 #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 #s.connect((TCP_IP, TCP_PORT))
@@ -26,7 +26,7 @@ def tcp(TCP_IP, TCP_PORT):
 
         try:
                 while True:
-                        avc_connection()
+                        connection()
 
         except KeyboardInterrupt:
                 s.close()

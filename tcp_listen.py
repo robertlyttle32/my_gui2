@@ -10,7 +10,7 @@ MESSAGE = "0x1"
 TCP_IP = ""
 TCP_PORT = 0
 
-def tcp(TCP_IP, TCP_PORT):
+def tcp(TCP_IP, TCP_PORT, x):
         global s
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
@@ -29,11 +29,13 @@ def tcp(TCP_IP, TCP_PORT):
                 while True:
                         connection()
 
+                        if x == True:
+                                print("X is equal to: ", x)
+                                s.close()
+
         except KeyboardInterrupt:
                 s.close()
                 print("connection broken")
                 pass
 
-def close_socket():
-        s.close()
 

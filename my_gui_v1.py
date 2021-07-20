@@ -555,11 +555,11 @@ def communication_wizard(object):
 
         #tab 1 settings menu buttons
         comm_1_btn_13_1 = Button(comm_tab_1, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
-        comm_1_btn_14_1 = Button(comm_tab_1, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+        comm_1_btn_14_1 = Button(comm_tab_1, text="Close", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #tab 2 settings menu buttons
         comm_2_btn_13_1 = Button(comm_tab_2, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
-        comm_2_btn_14_1 = Button(comm_tab_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+        comm_2_btn_14_1 = Button(comm_tab_2, text="Close", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #tab 1 settings menu window show entry boxes on screen
         comm_1_entry_3_1.grid(row=3, column=1, sticky="wne")
@@ -904,11 +904,11 @@ def troubleshoot_wizard():
 
         #control tab 1 buttons
         ctrl_1_btn_13_1 = Button(control_1, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
-        ctrl_1_btn_14_1 = Button(control_1, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+        ctrl_1_btn_14_1 = Button(control_1, text="Close", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #control tab 2 buttons
         ctrl_2_btn_13_1 = Button(control_2, text="Submit", command=submit).grid(row=13, column=1, sticky="wne")
-        ctrl_2_btn_14_1 = Button(control_2, text="Exit", command=kill_set).grid(row=14, column=1, sticky="wne")
+        ctrl_2_btn_14_1 = Button(control_2, text="Close", command=kill_set).grid(row=14, column=1, sticky="wne")
 
         #control tab 1 entry boxes on screen
         ctrl_1_entry_3_1.grid(row=3, column=1, sticky="wne")

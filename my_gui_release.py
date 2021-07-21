@@ -24,6 +24,7 @@ from tkinter import messagebox
 from tkcalendar import Calendar
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 import threading
+import logging
 
 cv2 = 0
 var = 0
@@ -41,6 +42,7 @@ FORWARD = False
 BACK = False
 button2 = False
 COUNT = 0
+logger = logging.getLogger(__name__)
 
 #get files
 class Debugger1:
@@ -238,23 +240,41 @@ def exit():
         print(stop)
         window.destroy()
 
-
 def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select):
         global s
         global s1
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((TCP_IP, TCP_PORT))
-        s1.connect((TCP_IP, TCP_PORT2))
         MESSAGE = "0x1"
         BUFFER_SIZE = 400
         #s.close()
         #bytes(string, 'utf-8')
         #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        #s.connect((TCP_IP, TCP_PORT))
-        s.send(bytes(MESSAGE, 'utf-8'))
-        data = s.recv(BUFFER_SIZE)
+
         #s.close()
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #s.connect((TCP_IP, TCP_PORT))
+                #s.connect((TCP_IP, TCP_PORT))
+
+        try:
+                s.connect((TCP_IP, TCP_PORT))
+                s1.connect((TCP_IP, TCP_PORT2))
+                #s.send("some more data")
+                s.send(bytes(MESSAGE, 'utf-8'))
+        except:
+                print("Lost connection reconnecting .......")
+                messagebox.showinfo("Lost connection")
+                # recreate the socket and reconnect
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                s1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                s.connect((TCP_IP, TCP_PORT))
+                s1.connect((TCP_IP, TCP_PORT2))
+                #s1.connect((TCP_IP, TCP_PORT2))
+                s.send(bytes(MESSAGE, 'utf-8'))
+        #except TimeoutError:
+                #messagebox.showinfo("Lost connection")
+
+
+        data = s.recv(BUFFER_SIZE)
         print ("received data:", data)
         s1.send(bytes(MESSAGE, 'utf-8')) #, 'utf-8'
 
@@ -324,7 +344,6 @@ def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select):
                         mw_1_entry_18_2.delete(0, END)
                         mw_1_entry_18_2.insert(END, data)
 
-
                 elif stop == True:
                         print("X is equal to: ", stop)
                         s.close()
@@ -336,6 +355,22 @@ def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select):
                 
         #thread_tcp_listen = threading.Thread(target=connection)
         #thread_tcp_listen.start()
+
+
+def is_socket_closed(sock: socket.socket) -> bool:
+        try:
+                # this will try to read bytes without blocking and also without removing them from buffer (peek only)
+                data = sock.recv(16, socket.MSG_DONTWAIT | socket.MSG_PEEK)
+                if len(data) == 0:
+                        return True
+        except BlockingIOError:
+                return False  # socket is open and reading from it would block
+        except ConnectionResetError:
+                return True  # socket was closed for some other reason
+        except Exception as e:
+                logger.exception("unexpected exception when checking if a socket is closed")
+                return False       
+        return False
 
 
 #settings menu main tab

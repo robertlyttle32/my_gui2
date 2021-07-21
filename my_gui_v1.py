@@ -238,6 +238,106 @@ def exit():
         print(stop)
         window.destroy()
 
+
+def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select):
+        global s
+        global s1
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((TCP_IP, TCP_PORT))
+        s1.connect((TCP_IP, TCP_PORT2))
+        MESSAGE = "0x1"
+        BUFFER_SIZE = 400
+        #s.close()
+        #bytes(string, 'utf-8')
+        #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #s.connect((TCP_IP, TCP_PORT))
+        s.send(bytes(MESSAGE, 'utf-8'))
+        data = s.recv(BUFFER_SIZE)
+        #s.close()
+        print ("received data:", data)
+        s1.send(bytes(MESSAGE, 'utf-8')) #, 'utf-8'
+
+        try:
+                if button_select == 0:
+                        print('you are here')
+                        mw_1_entry_3_2.delete(0, END)
+                        mw_1_entry_3_2.insert(END, data)
+
+                elif button_select == 1:
+                        mw_1_entry_4_2.delete(0, END)
+                        mw_1_entry_4_2.insert(END, data)
+
+                elif button_select == 2:
+                        mw_1_entry_5_2.delete(0, END)
+                        mw_1_entry_5_2.insert(END, data)
+
+                elif button_select == 3:
+                        mw_1_entry_6_2.delete(0, END)
+                        mw_1_entry_6_2.insert(END, data)
+
+                elif button_select == 4:
+                        mw_1_entry_7_2.delete(0, END)
+                        mw_1_entry_7_2.insert(END, data)
+
+                elif button_select == 5:
+                        mw_1_entry_8_2.delete(0, END)
+                        mw_1_entry_8_2.insert(END, data)
+
+                elif button_select == 6:
+                        mw_1_entry_9_2.delete(0, END)
+                        mw_1_entry_9_2.insert(END, data)
+
+                elif button_select == 7:
+                        mw_1_entry_10_2.delete(0, END)
+                        mw_1_entry_10_2.insert(END, data)
+
+                elif button_select == 8:
+                        mw_1_entry_11_2.delete(0, END)
+                        mw_1_entry_11_2.insert(END, data)
+
+                elif button_select == 9:
+                        mw_1_entry_12_2.delete(0, END)
+                        mw_1_entry_12_2.insert(END, data)
+
+                elif button_select == 10:
+                        mw_1_entry_13_2.delete(0, END)
+                        mw_1_entry_13_2.insert(END, data)
+
+                elif button_select == 11:
+                        mw_1_entry_14_2.delete(0, END)
+                        mw_1_entry_14_2.insert(END, data)
+
+                elif button_select == 12:
+                        mw_1_entry_15_2.delete(0, END)
+                        mw_1_entry_15_2.insert(END, data)
+
+                elif button_select == 13:
+                        mw_1_entry_16_2.delete(0, END)
+                        mw_1_entry_16_2.insert(END, data)
+
+                elif button_select == 14:
+                        mw_1_entry_17_2.delete(0, END)
+                        mw_1_entry_17_2.insert(END, data)
+
+                elif button_select == 15:
+                        mw_1_entry_18_2.delete(0, END)
+                        mw_1_entry_18_2.insert(END, data)
+
+
+                elif stop == True:
+                        print("X is equal to: ", stop)
+                        s.close()
+
+        except KeyboardInterrupt:
+                s.close()
+                print("connection broken")
+                pass
+                
+        #thread_tcp_listen = threading.Thread(target=connection)
+        #thread_tcp_listen.start()
+
+
 #settings menu main tab
 def communication_wizard(object):
         Tabs = Tk()
@@ -428,104 +528,7 @@ def communication_wizard(object):
                 comm_1_output_8_1 = int(comm_1_output_8_1)
                 TCP_PORT = comm_1_output_7_1
                 TCP_PORT2 = comm_1_output_8_1
-                
-                global s
-                global s1
-                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                s1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                s.connect((TCP_IP, TCP_PORT))
-                s1.connect((TCP_IP, TCP_PORT2))
-                MESSAGE = "0x1"
-                BUFFER_SIZE = 400
-                #s.close()
-                #bytes(string, 'utf-8')
-                #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                #s.connect((TCP_IP, TCP_PORT))
-                s.send(bytes(MESSAGE, 'utf-8'))
-                data = s.recv(BUFFER_SIZE)
-                #s.close()
-                print ("received data:", data)
-                s1.send(bytes(MESSAGE, 'utf-8')) #, 'utf-8'
-
-                try:
-                        if button_select == 0:
-                                print('you are here')
-                                mw_1_entry_3_2.delete(0, END)
-                                mw_1_entry_3_2.insert(END, data)
-
-                        elif button_select == 1:
-                                mw_1_entry_4_2.delete(0, END)
-                                mw_1_entry_4_2.insert(END, data)
-
-                        elif button_select == 2:
-                                mw_1_entry_5_2.delete(0, END)
-                                mw_1_entry_5_2.insert(END, data)
-
-                        elif button_select == 3:
-                                mw_1_entry_6_2.delete(0, END)
-                                mw_1_entry_6_2.insert(END, data)
-
-                        elif button_select == 4:
-                                mw_1_entry_7_2.delete(0, END)
-                                mw_1_entry_7_2.insert(END, data)
-
-                        elif button_select == 5:
-                                mw_1_entry_8_2.delete(0, END)
-                                mw_1_entry_8_2.insert(END, data)
-
-                        elif button_select == 6:
-                                mw_1_entry_9_2.delete(0, END)
-                                mw_1_entry_9_2.insert(END, data)
-
-                        elif button_select == 7:
-                                mw_1_entry_10_2.delete(0, END)
-                                mw_1_entry_10_2.insert(END, data)
-
-                        elif button_select == 8:
-                                mw_1_entry_11_2.delete(0, END)
-                                mw_1_entry_11_2.insert(END, data)
-
-                        elif button_select == 9:
-                                mw_1_entry_12_2.delete(0, END)
-                                mw_1_entry_12_2.insert(END, data)
-
-                        elif button_select == 10:
-                                mw_1_entry_13_2.delete(0, END)
-                                mw_1_entry_13_2.insert(END, data)
-
-                        elif button_select == 11:
-                                mw_1_entry_14_2.delete(0, END)
-                                mw_1_entry_14_2.insert(END, data)
-
-                        elif button_select == 12:
-                                mw_1_entry_15_2.delete(0, END)
-                                mw_1_entry_15_2.insert(END, data)
-
-                        elif button_select == 13:
-                                mw_1_entry_16_2.delete(0, END)
-                                mw_1_entry_16_2.insert(END, data)
-
-                        elif button_select == 14:
-                                mw_1_entry_17_2.delete(0, END)
-                                mw_1_entry_17_2.insert(END, data)
-
-                        elif button_select == 15:
-                                mw_1_entry_18_2.delete(0, END)
-                                mw_1_entry_18_2.insert(END, data)
-
-
-                        elif stop == True:
-                                print("X is equal to: ", stop)
-                                s.close()
-
-                except KeyboardInterrupt:
-                        s.close()
-                        print("connection broken")
-                        pass
-                
-                #thread_tcp_listen = threading.Thread(target=connection)
-                #thread_tcp_listen.start()
-
+                tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select)
 
         #tab 1, 2, 3, and 4 settings window menu labels
         comm_1_label_1_0 = Label(comm_tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)

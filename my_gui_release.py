@@ -905,6 +905,25 @@ def troubleshoot_wizard():
                 ctrl_1_entry_3_1.delete(0, END)
                 ctrl_1_entry_3_1.insert(END, COUNT)
 
+                #up counter
+        def count_left():
+                global COUNT
+                global OUTPUT
+                COUNT = COUNT - 1
+                OUTPUT = COUNT
+                ctrl_1_entry_4_1.delete(0, END)
+                ctrl_1_entry_4_1.insert(END, COUNT)
+
+        #down counter
+        def count_right():
+                global COUNT
+                global OUTPUT
+                COUNT = COUNT + 1
+                OUTPUT = COUNT
+                ctrl_1_entry_4_1.delete(0, END)
+                ctrl_1_entry_4_1.insert(END, COUNT)
+
+
 
         #c_1_0.delete(0, END)
         #c_1_0.insert(END, output)
@@ -924,8 +943,8 @@ def troubleshoot_wizard():
         ctrl_1_btn_10_1 = Button(control_1, text="Down", command=count_down).grid(row=10, column=1, sticky="wne", pady=5)
         ctrl_1_btn_11_1 = Button(control_1, text="Setting_3").grid(row=11, column=1, sticky="wne")
         ctrl_1_btn_12_1 = Button(control_1, text="Setting_4").grid(row=12, column=1, sticky="wne")
-        ctrl_1_btn_9_2 = Button(control_1, text="Left").grid(row=9, column=2, sticky="wne", padx=5, pady=5)
-        ctrl_1_btn_9_3 = Button(control_1, text="Right").grid(row=9, column=3, sticky="wne", padx=5, pady=5)
+        ctrl_1_btn_9_2 = Button(control_1, text="Left", command=count_left).grid(row=9, column=2, sticky="wne", padx=5, pady=5)
+        ctrl_1_btn_9_3 = Button(control_1, text="Right", command=count_right).grid(row=9, column=3, sticky="wne", padx=5, pady=5)
 
         #control tab 2 buttons
         ctrl_2_btn_9_1 = Button(control_2, text="+", command=count_up).grid(row=9, column=1, sticky="wne")

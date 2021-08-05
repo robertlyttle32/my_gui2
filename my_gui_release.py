@@ -889,7 +889,7 @@ def troubleshoot_wizard():
 
         #up counter
         def count_up():
-                COUNT = 0
+                global COUNT
                 global OUTPUT
                 COUNT = COUNT + 1
                 OUTPUT = COUNT
@@ -898,7 +898,7 @@ def troubleshoot_wizard():
 
         #down counter
         def count_down():
-                COUNT = 0
+                global COUNT
                 global OUTPUT
                 COUNT = COUNT - 1
                 OUTPUT = COUNT
@@ -1070,4 +1070,5 @@ mw_1_entry_18_2.grid(row=18, column=2, sticky="wne", padx=5)
 
 #create main window
 window_tabs.mainloop()
+
 

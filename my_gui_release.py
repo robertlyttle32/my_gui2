@@ -241,7 +241,7 @@ def exit():
         print(stop)
         window.destroy()
 
-def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select):
+def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, channel_select):
         global s
         global s1
         MESSAGE = "0x1"
@@ -280,98 +280,98 @@ def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select):
         s1.send(bytes(MESSAGE, 'utf-8')) #, 'utf-8'
 
         try:
-                if button_select == 0:
+                if channel_select == 0:
                         global data_0
                         data_0 = data
                         print('you are here')
                         mw_1_entry_3_2.delete(0, END)
                         mw_1_entry_3_2.insert(END, data_0)
 
-                elif button_select == 1:
+                elif channel_select == 1:
                         global data_1
                         data_1 = data
                         mw_1_entry_4_2.delete(0, END)
                         mw_1_entry_4_2.insert(END, data_1)
 
-                elif button_select == 2:
+                elif channel_select == 2:
                         global data_2
                         data_2 = data
                         mw_1_entry_5_2.delete(0, END)
                         mw_1_entry_5_2.insert(END, data_2)
 
-                elif button_select == 3:
+                elif channel_select == 3:
                         global data_3
                         data_3 = data
                         mw_1_entry_6_2.delete(0, END)
                         mw_1_entry_6_2.insert(END, data_3)
 
-                elif button_select == 4:
+                elif channel_select == 4:
                         global data_4
                         data_4 = data
                         mw_1_entry_7_2.delete(0, END)
                         mw_1_entry_7_2.insert(END, data_4)
 
-                elif button_select == 5:
+                elif channel_select == 5:
                         global data_5
                         data_5 = data
                         mw_1_entry_8_2.delete(0, END)
                         mw_1_entry_8_2.insert(END, data_5)
 
-                elif button_select == 6:
+                elif channel_select == 6:
                         global data_6
                         data_6 = data
                         mw_1_entry_9_2.delete(0, END)
                         mw_1_entry_9_2.insert(END, data_6)
 
-                elif button_select == 7:
+                elif channel_select == 7:
                         global data_7
                         data_7 = data
                         mw_1_entry_10_2.delete(0, END)
                         mw_1_entry_10_2.insert(END, data_7)
 
-                elif button_select == 8:
+                elif channel_select == 8:
                         global data_8
                         data_8 = data
                         mw_1_entry_11_2.delete(0, END)
                         mw_1_entry_11_2.insert(END, data_8)
 
-                elif button_select == 9:
+                elif channel_select == 9:
                         global data_9
                         data_9 = data
                         mw_1_entry_12_2.delete(0, END)
                         mw_1_entry_12_2.insert(END, data_9)
 
-                elif button_select == 10:
+                elif channel_select == 10:
                         global data_10
                         data_10 = data
                         mw_1_entry_13_2.delete(0, END)
                         mw_1_entry_13_2.insert(END, data_10)
 
-                elif button_select == 11:
+                elif channel_select == 11:
                         global data_11
                         data_11 = data
                         mw_1_entry_14_2.delete(0, END)
                         mw_1_entry_14_2.insert(END, data_11)
 
-                elif button_select == 12:
+                elif channel_select == 12:
                         global data_12
                         data_12 = data
                         mw_1_entry_15_2.delete(0, END)
                         mw_1_entry_15_2.insert(END, data_12)
 
-                elif button_select == 13:
+                elif channel_select == 13:
                         global data_13
                         data_13 = data
                         mw_1_entry_16_2.delete(0, END)
                         mw_1_entry_16_2.insert(END, data_13)
 
-                elif button_select == 14:
+                elif channel_select == 14:
                         global data_14
                         data_14 = data
                         mw_1_entry_17_2.delete(0, END)
                         mw_1_entry_17_2.insert(END, data_14)
 
-                elif button_select == 15:
+                elif channel_select == 15:
                         global data_15
                         data_15 = data
                         mw_1_entry_18_2.delete(0, END)
@@ -596,13 +596,13 @@ def communication_wizard(object):
                 comm_1_output_8_1 = int(comm_1_output_8_1)
                 TCP_PORT = comm_1_output_7_1
                 TCP_PORT2 = comm_1_output_8_1
-                tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select)
+                tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, channel_select)
 
         #tab 1, 2, 3, and 4 settings window menu labels
-        comm_1_label_1_0 = Label(comm_tab_1, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        comm_1_label_2_0 = Label(comm_tab_2, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        comm_1_label_3_0 = Label(comm_tab_3, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
-        comm_1_label_4_0 = Label(comm_tab_4, text="Channel: {}".format(button_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        comm_1_label_1_0 = Label(comm_tab_1, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        comm_1_label_2_0 = Label(comm_tab_2, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        comm_1_label_3_0 = Label(comm_tab_3, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
+        comm_1_label_4_0 = Label(comm_tab_4, text="Channel: {}".format(channel_select)).grid(row=0, column=0, sticky="wn", padx=5)
 
         #tab 1 settings menu buttons
         comm_1_btn_9_1 = Button(comm_tab_1, text="+").grid(row=9, column=1, sticky="wne")
@@ -621,7 +621,7 @@ def communication_wizard(object):
         def submit():
                 message1 = "Submitted"
                 print("Message1: ", message1)
-                get_entry(button_select)
+                get_entry(channel_select)
                 Tabs.destroy()
 
         #tab 1 settings menu buttons
@@ -662,9 +662,9 @@ def communication_wizard(object):
 
 #call settings funtions here
 def settings_menu(object):
-        global button_select
+        global channel_select
         global button1
-        button_select = object
+        channel_select = object
         button1 = not button1
         print('Pause again: ', button1)
         communication_wizard(object)
@@ -673,8 +673,8 @@ def settings_menu(object):
 #call funtions here
 def control_menu(object):
         global button1
-        global button_select
-        button_select = object
+        global channel_select
+        channel_select = object
         button1 = not button1
         print('Pause again: ', button1)
         troubleshoot_wizard(object)

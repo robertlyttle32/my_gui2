@@ -240,6 +240,7 @@ def exit():
         mw_1_entry_5_2.delete(0, END)
         print(stop)
         window.destroy()
+        window_tabs.destroy()
 
 def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, channel_select):
         global s

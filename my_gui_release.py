@@ -281,69 +281,101 @@ def tcp_connect(TCP_IP, TCP_PORT, TCP_PORT2, button_select):
 
         try:
                 if button_select == 0:
+                        global data_0
+                        data_0 = data
                         print('you are here')
                         mw_1_entry_3_2.delete(0, END)
-                        mw_1_entry_3_2.insert(END, data)
+                        mw_1_entry_3_2.insert(END, data_0)
 
                 elif button_select == 1:
+                        global data_1
+                        data_1 = data
                         mw_1_entry_4_2.delete(0, END)
-                        mw_1_entry_4_2.insert(END, data)
+                        mw_1_entry_4_2.insert(END, data_1)
 
                 elif button_select == 2:
+                        global data_2
+                        data_2 = data
                         mw_1_entry_5_2.delete(0, END)
-                        mw_1_entry_5_2.insert(END, data)
+                        mw_1_entry_5_2.insert(END, data_2)
 
                 elif button_select == 3:
+                        global data_3
+                        data_3 = data
                         mw_1_entry_6_2.delete(0, END)
-                        mw_1_entry_6_2.insert(END, data)
+                        mw_1_entry_6_2.insert(END, data_3)
 
                 elif button_select == 4:
+                        global data_4
+                        data_4 = data
                         mw_1_entry_7_2.delete(0, END)
-                        mw_1_entry_7_2.insert(END, data)
+                        mw_1_entry_7_2.insert(END, data_4)
 
                 elif button_select == 5:
+                        global data_5
+                        data_5 = data
                         mw_1_entry_8_2.delete(0, END)
-                        mw_1_entry_8_2.insert(END, data)
+                        mw_1_entry_8_2.insert(END, data_5)
 
                 elif button_select == 6:
+                        global data_6
+                        data_6 = data
                         mw_1_entry_9_2.delete(0, END)
-                        mw_1_entry_9_2.insert(END, data)
+                        mw_1_entry_9_2.insert(END, data_6)
 
                 elif button_select == 7:
+                        global data_7
+                        data_7 = data
                         mw_1_entry_10_2.delete(0, END)
-                        mw_1_entry_10_2.insert(END, data)
+                        mw_1_entry_10_2.insert(END, data_7)
 
                 elif button_select == 8:
+                        global data_8
+                        data_8 = data
                         mw_1_entry_11_2.delete(0, END)
-                        mw_1_entry_11_2.insert(END, data)
+                        mw_1_entry_11_2.insert(END, data_8)
 
                 elif button_select == 9:
+                        global data_9
+                        data_9 = data
                         mw_1_entry_12_2.delete(0, END)
-                        mw_1_entry_12_2.insert(END, data)
+                        mw_1_entry_12_2.insert(END, data_9)
 
                 elif button_select == 10:
+                        global data_10
+                        data_10 = data
                         mw_1_entry_13_2.delete(0, END)
-                        mw_1_entry_13_2.insert(END, data)
+                        mw_1_entry_13_2.insert(END, data_10)
 
                 elif button_select == 11:
+                        global data_11
+                        data_11 = data
                         mw_1_entry_14_2.delete(0, END)
-                        mw_1_entry_14_2.insert(END, data)
+                        mw_1_entry_14_2.insert(END, data_11)
 
                 elif button_select == 12:
+                        global data_12
+                        data_12 = data
                         mw_1_entry_15_2.delete(0, END)
-                        mw_1_entry_15_2.insert(END, data)
+                        mw_1_entry_15_2.insert(END, data_12)
 
                 elif button_select == 13:
+                        global data_13
+                        data_13 = data
                         mw_1_entry_16_2.delete(0, END)
-                        mw_1_entry_16_2.insert(END, data)
+                        mw_1_entry_16_2.insert(END, data_13)
 
                 elif button_select == 14:
+                        global data_14
+                        data_14 = data
                         mw_1_entry_17_2.delete(0, END)
-                        mw_1_entry_17_2.insert(END, data)
+                        mw_1_entry_17_2.insert(END, data_14)
 
                 elif button_select == 15:
+                        global data_15
+                        data_15 = data
                         mw_1_entry_18_2.delete(0, END)
-                        mw_1_entry_18_2.insert(END, data)
+                        mw_1_entry_18_2.insert(END, data_15)
 
                 elif stop == True:
                         print("X is equal to: ", stop)
@@ -906,7 +938,7 @@ def troubleshoot_wizard():
                 ctrl_1_entry_3_1.delete(0, END)
                 ctrl_1_entry_3_1.insert(END, COUNT)
 
-                #up counter
+        #up counter
         def count_left():
                 global COUNT_LR
                 global OUTPUT
@@ -923,8 +955,6 @@ def troubleshoot_wizard():
                 OUTPUT = COUNT_LR
                 ctrl_1_entry_4_1.delete(0, END)
                 ctrl_1_entry_4_1.insert(END, COUNT_LR)
-
-
 
         #c_1_0.delete(0, END)
         #c_1_0.insert(END, output)

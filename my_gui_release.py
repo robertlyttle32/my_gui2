@@ -42,6 +42,7 @@ FORWARD = False
 BACK = False
 button2 = False
 COUNT = 0
+COUNT_LR = 0 
 logger = logging.getLogger(__name__)
 
 #get files
@@ -907,21 +908,21 @@ def troubleshoot_wizard():
 
                 #up counter
         def count_left():
-                global COUNT
+                global COUNT_LR
                 global OUTPUT
-                COUNT = COUNT - 1
-                OUTPUT = COUNT
+                COUNT_LR = COUNT_LR - 1
+                OUTPUT = COUNT_LR
                 ctrl_1_entry_4_1.delete(0, END)
-                ctrl_1_entry_4_1.insert(END, COUNT)
+                ctrl_1_entry_4_1.insert(END, COUNT_LR)
 
         #down counter
         def count_right():
-                global COUNT
+                global COUNT_LR
                 global OUTPUT
-                COUNT = COUNT + 1
-                OUTPUT = COUNT
+                COUNT_LR = COUNT_LR + 1
+                OUTPUT = COUNT_LR
                 ctrl_1_entry_4_1.delete(0, END)
-                ctrl_1_entry_4_1.insert(END, COUNT)
+                ctrl_1_entry_4_1.insert(END, COUNT_LR)
 
 
 
